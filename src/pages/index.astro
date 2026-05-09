@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { services } from '../data/services';
+import { works } from '../data/works';
+import { company } from '../data/company';
+
+const featuredWorks = works.slice(0, 6);
+---
+
+<Layout>
+  <!-- HERO -->
+  <section class="relative bg-[#f5f5f7] pt-20 lg:pt-28 pb-0 overflow-hidden">
+    <div class="mx-auto max-w-5xl px-6 text-center">
+      <p class="text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] mb-4 uppercase fade-in">
+        Kanou Setsubi
+      </p>
+      <h1
+        class="headline-display text-[44px] sm:text-6xl lg:text-[88px] xl:text-[104px] text-[#1d1d1f] mb-5 fade-in"
+        style="animation-delay: 0.1s"
+      >
+        くらしの土台を、<br />静かに支える。
+      </h1>
+      <p
+        class="text-lg sm:text-xl lg:text-2xl text-[#1d1d1f] font-light max-w-2xl mx-auto leading-relaxed fade-in"
+        style="animation-delay: 0.2s"
+      >
+        埼玉県本庄市から、上下水道・空調・ガス・消防設備・衛生まで。<br class="hidden sm:block" />
+        確かな技術で、地域の毎日を支えています。
+      </p>
+
+      <div
+        class="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 fade-in"
+        style="animation-delay: 0.3s"
+      >
+        <a href="/services" class="link-arrow text-base lg:text-lg">事業内容を見る</a>
+        <a href="/contact" class="link-arrow text-base lg:text-lg">お問い合わせはこちら</a>
+      </div>
+    </div>
+
+    <!-- Hero visual: large logo as product hero -->
+    <div class="mt-16 lg:mt-24 flex justify-center fade-in" style="animation-delay: 0.5s">
+      <img
+        src="/logo.png"
+        alt={company.name}
+        class="w-80 sm:w-[30rem] lg:w-[48rem] xl:w-[56rem] h-auto select-none drop-shadow-[0_40px_80px_rgba(15,23,42,0.18)]"
+      />
+    </div>
+
+    <div class="h-12 lg:h-20"></div>
+  </section>
+
+  <!-- TAGLINE / Statement section -->
+  <section class="py-32 lg:py-48 bg-white text-center">
+    <div class="mx-auto max-w-4xl px-6">
+      <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-6">
+        Our Promise
+      </p>
+      <h2 class="reveal headline text-4xl sm:text-5xl lg:text-7xl text-[#1d1d1f]">
+        確かな仕事を、<br />ひとつずつ。
+      </h2>
+      <p class="reveal mt-8 text-lg lg:text-xl text-[#1d1d1f] font-light max-w-2xl mx-auto leading-relaxed">
+        公共工事から民間案件まで。設計から施工、メンテナンスまで一貫対応。<br />
+        地域に根ざし、創業以来の信頼を積み重ねてきました。
+      </p>
+    </div>
+  </section>
+
+  <!-- 5 SERVICES — one per fullbleed section, alternating bg -->
+  {
+    services.map((s, i) => {
+      const dark = i % 2 === 1;
+      const bg = dark ? 'bg-[#1d1d1f] text-white' : 'bg-[#f5f5f7] text-[#1d1d1f]';
+      const muted = dark ? 'text-[#d2d2d7]' : 'text-[#1d1d1f]';
+      return (
+        <section class={`relative py-28 lg:py-44 text-center overflow-hidden ${bg}`}>
+          <div class="mx-auto max-w-4xl px-6">
+            <p class={`reveal text-[13px] sm:text-sm font-semibold tracking-[0.2em] uppercase mb-5 ${dark ? 'text-[#5599ff]' : 'text-[#0066cc]'}`}>
+              0{i + 1} ／ {s.slug.toUpperCase()}
+            </p>
+            <h2 class={`reveal headline-display text-5xl sm:text-6xl lg:text-8xl mb-6 ${dark ? 'text-white' : 'text-[#1d1d1f]'}`}>
+              {s.title}
+            </h2>
+            <p class={`reveal text-xl lg:text-2xl font-light leading-snug mb-6 ${dark ? 'text-[#f5f5f7]' : 'text-[#1d1d1f]'}`}>
+              {s.short}
+            </p>
+            <p class={`reveal mt-2 text-base lg:text-lg max-w-2xl mx-auto leading-relaxed ${muted}`}>
+              {s.description}
+            </p>
+
+            <ul class="reveal mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm">
+              {s.features.map((f) => (
+                <li class={`px-3 py-1 rounded-full border ${dark ? 'border-white/20 text-[#f5f5f7]' : 'border-[#d2d2d7] text-[#1d1d1f]'}`}>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <div class="reveal mt-12">
+              <a href={`/services#${s.slug}`} class="link-arrow text-base lg:text-lg">詳しく見る</a>
+            </div>
+          </div>
+        </section>
+      );
+    })
+  }
+
+  <!-- WORKS — clean editorial grid -->
+  <section class="py-28 lg:py-40 bg-white">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center mb-16 lg:mb-20">
+        <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
+          Works
+        </p>
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-7xl text-[#1d1d1f]">
+          実績が、信頼の証。
+        </h2>
+        <p class="reveal mt-6 text-lg text-[#1d1d1f] font-light max-w-2xl mx-auto">
+          公共・民間あわせて多数の施工事例。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+        {featuredWorks.map((w, i) => (
+          <a href="/works" class="reveal group block" style={`transition-delay: ${i * 60}ms`}>
+            <div class="aspect-[4/3] bg-[#f5f5f7] rounded-2xl overflow-hidden mb-5 relative">
+              <div class="absolute inset-0 flex items-center justify-center text-[#1d1d1f] text-xs">施工写真</div>
+              <span class="absolute top-4 left-4 px-3 py-1 bg-white/95 text-[#1d1d1f] text-[11px] font-bold tracking-wider rounded-full">
+                {w.categoryLabel}
+              </span>
+            </div>
+            <p class="text-xs text-[#1d1d1f] mb-1">{w.year} ／ {w.location}</p>
+            <h3 class="text-lg font-bold text-[#1d1d1f] leading-snug group-hover:text-[#0066cc] transition">
+              {w.title}
+            </h3>
+          </a>
+        ))}
+      </div>
+
+      <div class="reveal text-center mt-16">
+        <a href="/works" class="link-arrow text-base lg:text-lg">すべての施工事例を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECRUIT — dark hero -->
+  <section class="relative py-32 lg:py-52 bg-[#1d1d1f] text-white text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-30 pointer-events-none">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80rem] h-[80rem] bg-[#0066cc] rounded-full blur-[160px]"></div>
+    </div>
+    <div class="relative mx-auto max-w-5xl px-6">
+      <p class="reveal text-[13px] sm:text-sm font-semibold text-[#5599ff] tracking-[0.2em] uppercase mb-5">
+        Recruit
+      </p>
+      <h2 class="reveal headline-display text-5xl sm:text-6xl lg:text-[104px] mb-8">
+        あなたの技術が、<br />誰かの暮らしになる。
+      </h2>
+      <p class="reveal text-lg lg:text-2xl text-[#d2d2d7] font-light max-w-2xl mx-auto leading-relaxed">
+        新卒・中途・協力会社、すべて募集中。<br />
+        未経験から始めて、長く活躍できる環境があります。
+      </p>
+      <div class="reveal mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+        <a href="/recruit" class="link-arrow text-base lg:text-lg">採用情報を見る</a>
+        <a href="/contact?type=partner" class="link-arrow text-base lg:text-lg">協力会社のご相談</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="py-24 lg:py-36 bg-white text-center">
+    <div class="mx-auto max-w-4xl px-6">
+      <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
+        Instagram
+      </p>
+      <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f] mb-6">
+        日々の現場を、<br />配信中。
+      </h2>
+      <p class="reveal text-lg text-[#1d1d1f] font-light max-w-xl mx-auto mb-10">
+        現場の様子・施工の裏側・社員の声をInstagramで発信予定です。
+      </p>
+      <a
+        href={company.instagram}
+        target="_blank"
+        rel="noopener"
+        class="reveal inline-flex items-center px-8 py-3 bg-[#1d1d1f] hover:bg-black text-white text-base font-medium rounded-full transition"
+      >
+        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+        Instagramをフォロー
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT — Apple-style closing -->
+  <section class="py-28 lg:py-40 bg-[#f5f5f7] text-center">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="reveal headline text-4xl sm:text-5xl lg:text-7xl text-[#1d1d1f] mb-6">
+        お気軽に、ご相談ください。
+      </h2>
+      <p class="reveal text-lg lg:text-xl text-[#1d1d1f] font-light mb-12">
+        見積もり・現地調査・技術相談、すべて無料で承ります。
+      </p>
+
+      <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+        <a
+          href={`tel:${company.phone}`}
+          class="flex flex-col items-center justify-center px-8 py-8 bg-white hover:bg-white/90 rounded-2xl border border-[#d2d2d7] transition"
+        >
+          <span class="text-[11px] text-[#1d1d1f] tracking-[0.2em] uppercase mb-2">Call</span>
+          <span class="text-2xl lg:text-3xl font-bold text-[#1d1d1f]">{company.phone}</span>
+          <span class="text-xs text-[#1d1d1f] mt-2">{company.hours}</span>
+        </a>
+        <a
+          href="/contact"
+          class="flex flex-col items-center justify-center px-8 py-8 bg-[#1d1d1f] hover:bg-black rounded-2xl transition text-white"
+        >
+          <span class="text-[11px] text-[#d2d2d7] tracking-[0.2em] uppercase mb-2">Online</span>
+          <span class="text-2xl lg:text-3xl font-bold">お問い合わせフォーム</span>
+          <span class="text-xs text-[#d2d2d7] mt-2">24時間受付・返信に2日程いただく場合があります</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { company } from '../data/company';
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_ME';
+---
+
+<Layout title="お問い合わせ" description="加納設備株式会社へのお問い合わせ。お見積もり・採用エントリー・協力会社のご相談はこちらから。">
+  <!-- HERO -->
+  <section class="bg-[#f5f5f7] pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-4 fade-in">
+        Contact
+      </p>
+      <h1 class="headline-display text-5xl sm:text-6xl lg:text-8xl text-[#1d1d1f] mb-6 fade-in" style="animation-delay: 0.1s">
+        お気軽に、<br />ご相談ください。
+      </h1>
+      <p class="text-lg lg:text-xl text-[#1d1d1f] font-light max-w-2xl mx-auto leading-relaxed fade-in" style="animation-delay: 0.2s">
+        設備工事のご依頼・採用エントリー・協力会社のご相談、<br class="hidden sm:block" />
+        どんなことでもお問い合わせください。
+      </p>
+    </div>
+  </section>
+
+  <!-- CHANNELS -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href={`tel:${company.phone}`} class="reveal flex flex-col items-center justify-center px-8 py-10 bg-[#f5f5f7] rounded-2xl hover:bg-[#ebebef] transition">
+          <span class="text-[11px] text-[#1d1d1f] tracking-[0.2em] uppercase mb-3">Call</span>
+          <span class="text-3xl lg:text-4xl font-bold text-[#1d1d1f]">{company.phone}</span>
+          <span class="text-xs text-[#1d1d1f] mt-3">{company.hours}</span>
+        </a>
+        <div class="reveal flex flex-col items-center justify-center px-8 py-10 bg-[#1d1d1f] text-white rounded-2xl">
+          <span class="text-[11px] text-[#d2d2d7] tracking-[0.2em] uppercase mb-3">Form</span>
+          <span class="text-2xl lg:text-3xl font-bold">下記フォームから</span>
+          <span class="text-xs text-[#d2d2d7] mt-3">24時間受付・返信に2日程いただく場合があります</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="pb-28 lg:pb-40 bg-white">
+    <div class="mx-auto max-w-3xl px-6">
+      <form id="contactForm" action={FORMSPREE_ENDPOINT} method="POST" class="reveal space-y-8 bg-[#f5f5f7] rounded-3xl p-8 lg:p-12">
+        <div>
+          <label for="type" class="block text-sm font-semibold text-[#1d1d1f] mb-2">
+            お問い合わせ種別 <span class="text-[#0066cc]">*</span>
+          </label>
+          <select id="type" name="type" required class="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 transition">
+            <option value="">選択してください</option>
+            <option value="business">設備工事のご依頼・お見積もり（BtoB）</option>
+            <option value="recruit">採用エントリー（新卒・中途）</option>
+            <option value="partner">協力会社のご相談</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-[#1d1d1f] mb-2">
+              お名前 <span class="text-[#0066cc]">*</span>
+            </label>
+            <input type="text" id="name" name="name" required placeholder="山田 太郎"
+              class="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 transition" />
+          </div>
+          <div>
+            <label for="company" class="block text-sm font-semibold text-[#1d1d1f] mb-2">会社名 / 学校名</label>
+            <input type="text" id="company" name="company" placeholder="株式会社○○"
+              class="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 transition" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="email" class="block text-sm font-semibold text-[#1d1d1f] mb-2">
+              メールアドレス <span class="text-[#0066cc]">*</span>
+            </label>
+            <input type="email" id="email" name="email" required placeholder="example@email.com"
+              class="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 transition" />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-semibold text-[#1d1d1f] mb-2">電話番号</label>
+            <input type="tel" id="phone" name="phone" placeholder="0495-00-0000"
+              class="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 transition" />
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-semibold text-[#1d1d1f] mb-2">
+            お問い合わせ内容 <span class="text-[#0066cc]">*</span>
+          </label>
+          <textarea id="message" name="message" required rows="6" placeholder="ご相談内容をお書きください"
+            class="w-full px-4 py-3 bg-white border border-[#d2d2d7] rounded-xl focus:outline-none focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 transition resize-y"></textarea>
+        </div>
+
+        <div>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" required class="mt-1 w-4 h-4 text-[#0066cc] border-[#d2d2d7] rounded focus:ring-[#0066cc]" />
+            <span class="text-sm text-[#1d1d1f]">
+              <a href="#" class="text-[#0066cc] hover:underline">プライバシーポリシー</a>に同意の上、送信します。
+            </span>
+          </label>
+        </div>
+
+        <div class="text-center pt-2">
+          <button type="submit" id="submitBtn"
+            class="inline-flex items-center justify-center px-12 py-4 bg-[#1d1d1f] hover:bg-black text-white text-base font-semibold rounded-full transition disabled:opacity-50">
+            送信する
+          </button>
+        </div>
+
+        <div id="formMsg" class="hidden text-center text-[#0066cc] font-bold py-4">
+          送信が完了しました。2営業日以内にご返信いたします。
+        </div>
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const typeParam = params.get('type');
+  if (typeParam) {
+    const sel = document.getElementById('type') as HTMLSelectElement | null;
+    if (sel && Array.from(sel.options).some((o) => o.value === typeParam)) {
+      sel.value = typeParam;
+    }
+  }
+
+  const form = document.getElementById('contactForm') as HTMLFormElement | null;
+  const msg = document.getElementById('formMsg');
+  const btn = document.getElementById('submitBtn') as HTMLButtonElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    if (!form.action.includes('REPLACE_ME')) return;
+    e.preventDefault();
+    if (!btn) return;
+    btn.disabled = true;
+    btn.textContent = '送信中…';
+    setTimeout(() => {
+      form.style.display = 'none';
+      msg?.classList.remove('hidden');
+    }, 800);
+  });
+</script>

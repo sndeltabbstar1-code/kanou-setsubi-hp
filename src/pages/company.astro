@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { company } from '../data/company';
+
+const profile = [
+  { label: '会社名', value: `${company.name}（${company.nameEn}）` },
+  { label: '所在地', value: company.address },
+  { label: '電話番号', value: company.phone },
+  { label: '代表者', value: company.ceo },
+  { label: '設立', value: company.founded },
+  { label: '資本金', value: company.capital },
+  { label: '従業員数', value: company.employees },
+  { label: '建設業許可', value: company.license },
+  { label: '対応エリア', value: company.area },
+  { label: '営業時間', value: company.hours },
+  { label: '事業内容', value: '上下水道設備・空調設備・ガス設備・消防設備・衛生設備の設計・施工・保守' },
+];
+
+const history = [
+  { year: '創業', text: '加納設備株式会社 設立（後日詳細記載）' },
+  { year: '○○年', text: '建設業許可取得（後日記載）' },
+  { year: '○○年', text: '消防施設工事業 取得（後日記載）' },
+  { year: '現在', text: '本庄市を拠点に、公共・民間問わず多数の実績' },
+];
+---
+
+<Layout title="会社概要" description="加納設備株式会社の会社概要。埼玉県本庄市を拠点に設備工事を提供。">
+  <!-- HERO -->
+  <section class="bg-[#f5f5f7] pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-4 fade-in">
+        Company
+      </p>
+      <h1 class="headline-display text-5xl sm:text-6xl lg:text-8xl text-[#1d1d1f] mb-6 fade-in" style="animation-delay: 0.1s">
+        地域とともに、<br />未来を支える。
+      </h1>
+      <p class="text-lg lg:text-xl text-[#1d1d1f] font-light max-w-2xl mx-auto leading-relaxed fade-in" style="animation-delay: 0.2s">
+        加納設備株式会社は、地域のくらしと産業を、<br class="hidden sm:block" />
+        設備の力で支えていきます。
+      </p>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="py-28 lg:py-40 bg-white">
+    <div class="mx-auto max-w-3xl px-6">
+      <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5 text-center">
+        Message
+      </p>
+      <h2 class="reveal headline text-3xl sm:text-4xl lg:text-5xl text-[#1d1d1f] mb-12 text-center">
+        代表メッセージ
+      </h2>
+      <div class="reveal space-y-6 text-[#1d1d1f] text-base lg:text-lg leading-loose">
+        <p>
+          加納設備株式会社は、地域のくらしと産業の根幹を支える「設備」の会社です。
+          上下水道、空調、ガス、消防設備、衛生──いずれも、なくてはならないインフラ。
+          その施工を、地域の信頼に応えるかたちで一つひとつ丁寧に積み重ねてまいりました。
+        </p>
+        <p>
+          少数精鋭の体制だからこそ、お客様一人ひとりと向き合い、
+          現場ごとに最適なご提案ができると考えています。
+          公共工事の信頼性と、民間工事の柔軟性。両方を兼ね備えるのが私たちの強みです。
+        </p>
+        <p>
+          これからも地域とともに、未来を支える設備を提供してまいります。
+        </p>
+        <p class="text-right text-[#1d1d1f] pt-4">代表取締役　{company.ceo}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="py-28 lg:py-40 bg-[#f5f5f7]">
+    <div class="mx-auto max-w-4xl px-6">
+      <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5 text-center">
+        Profile
+      </p>
+      <h2 class="reveal headline text-3xl sm:text-4xl lg:text-5xl text-[#1d1d1f] mb-12 text-center">
+        会社情報
+      </h2>
+      <div class="reveal bg-white rounded-2xl border border-[#d2d2d7] overflow-hidden">
+        <dl class="divide-y divide-[#d2d2d7]">
+          {profile.map((row) => (
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 px-6 py-5">
+              <dt class="text-sm font-semibold text-[#1d1d1f]">{row.label}</dt>
+              <dd class="sm:col-span-3 text-sm text-[#1d1d1f]">{row.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="py-28 lg:py-40 bg-white">
+    <div class="mx-auto max-w-3xl px-6">
+      <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5 text-center">
+        History
+      </p>
+      <h2 class="reveal headline text-3xl sm:text-4xl lg:text-5xl text-[#1d1d1f] mb-12 text-center">
+        沿革
+      </h2>
+      <ol class="reveal relative border-l border-[#d2d2d7] pl-8 space-y-10">
+        {history.map((h) => (
+          <li class="relative">
+            <span class="absolute -left-[37px] top-1 w-3.5 h-3.5 bg-[#0066cc] rounded-full border-4 border-white"></span>
+            <p class="text-sm font-semibold text-[#0066cc] mb-1 tracking-wider">{h.year}</p>
+            <p class="text-[#1d1d1f]">{h.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="py-28 lg:py-40 bg-[#f5f5f7]">
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5 text-center">
+        Access
+      </p>
+      <h2 class="reveal headline text-3xl sm:text-4xl lg:text-5xl text-[#1d1d1f] mb-4 text-center">
+        アクセス
+      </h2>
+      <p class="reveal text-center text-[#1d1d1f] mb-12">{company.address}</p>
+      <div class="reveal aspect-[16/9] rounded-2xl overflow-hidden border border-[#d2d2d7] bg-white">
+        <iframe
+          src={company.mapEmbed}
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="加納設備株式会社 アクセスマップ"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</Layout>

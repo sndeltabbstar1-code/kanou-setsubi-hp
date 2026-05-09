@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { works } from '../data/works';
+
+const categories = [
+  { value: 'all', label: 'すべて' },
+  { value: 'water', label: '上下水道' },
+  { value: 'air', label: '空調' },
+  { value: 'fire', label: '消防設備' },
+  { value: 'sanitary', label: '衛生' },
+];
+---
+
+<Layout title="施工事例" description="加納設備株式会社の施工事例。公共・民間あわせて多数の実績があります。">
+  <!-- HERO -->
+  <section class="bg-[#f5f5f7] pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-4 fade-in">
+        Works
+      </p>
+      <h1 class="headline-display text-5xl sm:text-6xl lg:text-8xl text-[#1d1d1f] mb-6 fade-in" style="animation-delay: 0.1s">
+        実績が、<br />信頼の証。
+      </h1>
+      <p class="text-lg lg:text-xl text-[#1d1d1f] font-light max-w-2xl mx-auto leading-relaxed fade-in" style="animation-delay: 0.2s">
+        公共工事・民間工事ともに多数の実績。<br class="hidden sm:block" />
+        地域に根ざし、信頼される施工を続けています。
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex flex-wrap gap-2 mb-12 lg:mb-16 justify-center">
+        {categories.map((c) => (
+          <button
+            data-filter={c.value}
+            class="filter-btn px-5 py-2 text-sm font-medium rounded-full border border-[#d2d2d7] text-[#1d1d1f] hover:border-[#1d1d1f] transition data-[active=true]:bg-[#1d1d1f] data-[active=true]:border-[#1d1d1f] data-[active=true]:text-white"
+            data-active={c.value === 'all' ? 'true' : 'false'}
+          >
+            {c.label}
+          </button>
+        ))}
+      </div>
+
+      <div id="works-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+        {works.map((w, i) => (
+          <article class="work-item reveal group" data-category={w.category} style={`transition-delay: ${(i % 3) * 80}ms`}>
+            <div class="aspect-[4/3] bg-[#f5f5f7] rounded-2xl overflow-hidden mb-5 relative">
+              <div class="absolute inset-0 flex items-center justify-center text-[#1d1d1f] text-xs">施工写真</div>
+              <span class="absolute top-4 left-4 px-3 py-1 bg-white/95 text-[#1d1d1f] text-[11px] font-bold tracking-wider rounded-full">
+                {w.categoryLabel}
+              </span>
+              <span class="absolute top-4 right-4 px-3 py-1 bg-[#1d1d1f]/80 text-white text-[11px] font-bold rounded-full backdrop-blur">
+                {w.year}
+              </span>
+            </div>
+            <p class="text-xs text-[#1d1d1f] mb-1">{w.location} ／ {w.client}</p>
+            <h3 class="text-lg font-bold text-[#1d1d1f] leading-snug mb-2 group-hover:text-[#0066cc] transition">
+              {w.title}
+            </h3>
+            <p class="text-sm text-[#1d1d1f] leading-relaxed line-clamp-3">{w.description}</p>
+          </article>
+        ))}
+      </div>
+
+      <p id="empty-msg" class="hidden text-center text-[#1d1d1f] py-16">該当する事例はありません。</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 lg:py-32 bg-[#f5f5f7] text-center">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f] mb-4">
+        類似工事のご相談。
+      </h2>
+      <p class="reveal text-lg text-[#1d1d1f] font-light mb-2">
+        他にも多数の実績があります。
+      </p>
+      <p class="reveal text-lg text-[#1d1d1f] font-light mb-10">
+        企業様一社一社のご要望に合わせた最適なご提案にも力を入れております。
+      </p>
+      <div class="reveal flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+        <a href="/contact" class="inline-flex items-center px-8 py-3 bg-[#1d1d1f] hover:bg-black text-white text-base font-medium rounded-full transition">お問い合わせ</a>
+        <a href="/services" class="link-arrow text-base lg:text-lg">事業内容を見る</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const items = document.querySelectorAll<HTMLElement>('.work-item');
+  const empty = document.getElementById('empty-msg');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      buttons.forEach((b) => b.dataset.active = (b === btn) ? 'true' : 'false');
+
+      let visible = 0;
+      items.forEach((item) => {
+        const cat = item.dataset.category;
+        const show = filter === 'all' || cat === filter;
+        item.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      if (empty) empty.classList.toggle('hidden', visible > 0);
+    });
+  });
+</script>

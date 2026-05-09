@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceIcon from '../components/ServiceIcon.astro';
+import { services } from '../data/services';
+---
+
+<Layout title="事業内容" description="加納設備株式会社の事業内容。上下水道・空調・ガス・消防設備・衛生設備の設計から施工までを一貫対応。">
+  <!-- HERO -->
+  <section class="bg-[#f5f5f7] pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-4 fade-in">
+        Services
+      </p>
+      <h1 class="headline-display text-5xl sm:text-6xl lg:text-8xl text-[#1d1d1f] mb-6 fade-in" style="animation-delay: 0.1s">
+        5つの設備、<br />ひとつの責任。
+      </h1>
+      <p class="text-lg lg:text-xl text-[#1d1d1f] font-light max-w-2xl mx-auto leading-relaxed fade-in" style="animation-delay: 0.2s">
+        設計から施工、メンテナンスまで一貫対応。<br class="hidden sm:block" />
+        専門領域を超えて、最適な設備をご提案します。
+      </p>
+    </div>
+  </section>
+
+  <!-- ANCHOR NAV -->
+  <section class="sticky top-14 lg:top-16 z-30 bg-white/85 backdrop-blur-xl border-b border-[#d2d2d7]/60">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex items-center gap-2 lg:gap-6 overflow-x-auto py-3 scrollbar-thin">
+        {services.map((s) => (
+          <a href={`#${s.slug}`} class="flex items-center gap-2 px-3 py-1.5 text-[13px] font-medium text-[#1d1d1f] hover:text-[#0066cc] whitespace-nowrap transition">
+            <ServiceIcon icon={s.icon} class="w-4 h-4" />
+            {s.title}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 SERVICES sections -->
+  {services.map((s, i) => {
+    const dark = i % 2 === 1;
+    const bg = dark ? 'bg-[#1d1d1f] text-white' : 'bg-[#f5f5f7] text-[#1d1d1f]';
+    const muted = dark ? 'text-[#a1a1a6]' : 'text-[#1d1d1f]';
+    return (
+      <section id={s.slug} class={`scroll-mt-28 py-28 lg:py-44 text-center ${bg}`}>
+        <div class="mx-auto max-w-4xl px-6">
+          <p class={`reveal text-[13px] sm:text-sm font-semibold tracking-[0.2em] uppercase mb-5 ${dark ? 'text-[#5599ff]' : 'text-[#0066cc]'}`}>
+            0{i + 1} ／ {s.slug.toUpperCase()}
+          </p>
+          <div class="reveal mb-8 flex justify-center">
+            <div class={`w-20 h-20 rounded-full flex items-center justify-center ${dark ? 'bg-white/10' : 'bg-white'}`}>
+              <ServiceIcon icon={s.icon} class={`w-10 h-10 ${dark ? 'text-[#5599ff]' : 'text-[#0066cc]'}`} />
+            </div>
+          </div>
+          <h2 class={`reveal headline-display text-5xl sm:text-6xl lg:text-8xl mb-5 ${dark ? 'text-white' : 'text-[#1d1d1f]'}`}>
+            {s.title}
+          </h2>
+          <p class={`reveal text-xl lg:text-2xl font-light leading-snug mb-6 ${dark ? 'text-[#f5f5f7]' : 'text-[#1d1d1f]'}`}>
+            {s.short}
+          </p>
+          <p class={`reveal text-base lg:text-lg max-w-2xl mx-auto leading-relaxed ${muted}`}>
+            {s.description}
+          </p>
+
+          <ul class="reveal mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm">
+            {s.features.map((f) => (
+              <li class={`px-4 py-1.5 rounded-full border ${dark ? 'border-white/20 text-[#f5f5f7]' : 'border-[#d2d2d7] bg-white text-[#1d1d1f]'}`}>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- CTA -->
+  <section class="py-24 lg:py-32 bg-white text-center">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f] mb-6">
+        ご相談を、お聞かせください。
+      </h2>
+      <p class="reveal text-lg text-[#1d1d1f] font-light mb-10">
+        設備工事のお見積もり・現地調査は無料です。
+      </p>
+      <div class="reveal flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+        <a href="/contact" class="inline-flex items-center px-8 py-3 bg-[#1d1d1f] hover:bg-black text-white text-base font-medium rounded-full transition">お問い合わせ</a>
+        <a href="/works" class="link-arrow text-base lg:text-lg">施工事例を見る</a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,77 @@
+---
+import { company } from '../data/company';
+
+const navItems = [
+  { href: '/', label: 'ホーム' },
+  { href: '/services', label: '事業内容' },
+  { href: '/works', label: '施工事例' },
+  { href: '/company', label: '会社概要' },
+  { href: '/recruit', label: '採用情報' },
+  { href: '/contact', label: 'お問い合わせ' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-[#d2d2d7]/60">
+  <div class="mx-auto max-w-[1280px] px-5 lg:px-8">
+    <div class="flex h-14 lg:h-16 items-center justify-between">
+      <a href="/" class="flex items-center group shrink-0" aria-label={company.name}>
+        <img src="/header-logo.png" alt={company.name} class="h-7 lg:h-9 w-auto" />
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-2">
+        {navItems.filter((item) => item.href !== '/contact').map((item) => {
+          const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
+          return (
+            <a
+              href={item.href}
+              class:list={[
+                'px-3 py-2 text-[13px] font-medium tracking-tight transition-colors whitespace-nowrap',
+                isActive
+                  ? 'text-[#1d1d1f]'
+                  : 'text-[#1d1d1f] hover:text-[#1d1d1f]'
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+        <a
+          href="/contact"
+          class="ml-2 inline-flex items-center px-4 py-1.5 bg-[#1d1d1f] hover:bg-[#000] text-white text-[13px] font-medium rounded-full transition whitespace-nowrap"
+        >
+          お問い合わせ
+        </a>
+      </nav>
+
+      <button
+        id="menu-toggle"
+        class="lg:hidden p-2 text-[#1d1d1f]"
+        aria-label="メニュー"
+      >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden pb-4">
+      <nav class="flex flex-col gap-1">
+        {navItems.map((item) => (
+          <a href={item.href} class="px-3 py-3 text-base font-medium text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-md">
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

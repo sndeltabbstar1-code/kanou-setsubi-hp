@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#1E40AF"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#991B1B"/>
+    </linearGradient>
+  </defs>
+  <circle cx="120" cy="100" r="78" fill="none" stroke="#94A3B8" stroke-width="3"/>
+  <circle cx="120" cy="100" r="74" fill="none" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="120" y="128" text-anchor="middle" font-family="Inter, sans-serif" font-size="100" font-weight="900" fill="url(#kg)">K</text>
+  <path d="M70 145 L120 130 L170 145" fill="none" stroke="url(#rg)" stroke-width="3"/>
+  <text x="120" y="220" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="22" font-weight="700" fill="#0F172A" letter-spacing="2">加納設備株式会社</text>
+</svg>

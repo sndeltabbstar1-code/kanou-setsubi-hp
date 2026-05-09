@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { company } from '../data/company';
+
+const dailyFlow = [
+  { time: '7:30', task: '出社・朝礼', desc: '当日の現場・作業内容を確認' },
+  { time: '8:00', task: '現場へ移動', desc: '社用車で現場まで移動。チームで行動' },
+  { time: '8:30', task: '作業開始', desc: '配管・据付・試運転など、当日の作業を実施' },
+  { time: '12:00', task: '昼休憩', desc: '現場近くで昼食。1時間しっかり休憩' },
+  { time: '13:00', task: '午後作業', desc: '安全第一で作業を継続' },
+  { time: '17:00', task: '片付け・帰社', desc: '工具・現場を片付け、帰社' },
+  { time: '17:30', task: '退社', desc: 'お疲れさまでした' },
+];
+
+const benefits = [
+  { title: '昇給・賞与', text: '年1回の昇給、年2回の賞与' },
+  { title: '社会保険完備', text: '健康保険・厚生年金・雇用・労災' },
+  { title: '車両・工具支給', text: '社用車・作業工具は会社が支給' },
+  { title: '資格取得支援', text: '受験料・講習費を会社が負担' },
+  { title: '作業服貸与', text: '作業服・防寒着・安全靴を支給' },
+  { title: 'OJT研修', text: '先輩がマンツーマンで丁寧に指導' },
+];
+
+const voices = [
+  {
+    name: 'Aさん（入社3年目）',
+    age: '20代後半・未経験入社',
+    quote: '最初は配管も読めなかったけど、先輩が一から教えてくれた。今は一人で現場を任せてもらえるようになりました。',
+  },
+  {
+    name: 'Bさん（入社7年目）',
+    age: '30代前半・現場代理人',
+    quote: '公共工事も民間工事も両方経験できる。少数精鋭だから、若いうちから責任ある仕事ができるのが魅力です。',
+  },
+  {
+    name: 'Cさん（協力会社）',
+    age: '50代・パートナー',
+    quote: '加納設備さんは仕事が丁寧で、信頼できる。長く一緒にやっています。',
+  },
+];
+
+const requirements = [
+  { label: '雇用形態', value: '正社員（試用期間3ヶ月）' },
+  { label: '職種', value: '設備施工管理／現場作業員' },
+  { label: '勤務地', value: company.address + '（および現場）' },
+  { label: '勤務時間', value: '8:00〜17:30（実働8時間／休憩90分）' },
+  { label: '休日休暇', value: '土日曜・祝日・年末年始・有給' },
+  { label: '給与', value: '月給22万円〜（経験・能力により優遇）' },
+  { label: '昇給・賞与', value: '昇給年1回／賞与年2回／施工管理資格等取得' },
+  { label: '応募資格', value: '高卒以上／普通自動車免許／未経験歓迎' },
+  { label: '歓迎する経験', value: '建設・設備系の実務経験／関連資格保有者' },
+];
+
+const reasons = [
+  { title: '地域密着・転勤なし', text: '本庄を拠点に、地元中心の仕事。長く腰を据えて働けます。' },
+  { title: '未経験から手に職', text: '配管も電気もガスも。一から丁寧に教えます。資格取得も全力支援。' },
+  { title: '少数精鋭の風通し', text: '10名規模だから、若手でも意見が通る。挑戦できる環境です。' },
+];
+---
+
+<Layout title="採用情報" description="加納設備株式会社の採用情報。新卒・中途・協力会社募集。未経験から始めて長く活躍できる環境があります。">
+  <!-- HERO -->
+  <section class="relative bg-[#1d1d1f] text-white pt-28 lg:pt-40 pb-28 lg:pb-40 text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-30 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80rem] h-[80rem] bg-[#0066cc] rounded-full blur-[160px]"></div>
+    </div>
+    <div class="relative mx-auto max-w-5xl px-6">
+      <p class="text-[13px] sm:text-sm font-semibold text-[#5599ff] tracking-[0.2em] uppercase mb-5 fade-in">
+        Recruit
+      </p>
+      <h1 class="headline-display text-5xl sm:text-6xl lg:text-[112px] mb-8 fade-in" style="animation-delay: 0.1s">
+        あなたの技術が、<br />誰かの暮らしになる。
+      </h1>
+      <p class="text-lg lg:text-2xl text-[#d2d2d7] font-light max-w-2xl mx-auto leading-relaxed fade-in" style="animation-delay: 0.2s">
+        新卒・中途・協力会社、すべて募集中。<br />
+        未経験から始めて長く活躍できる環境があります。
+      </p>
+      <div class="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 fade-in" style="animation-delay: 0.3s">
+        <a href="#requirements" class="inline-flex items-center px-8 py-3 bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] text-base font-medium rounded-full transition">募集要項を見る</a>
+        <a href="/contact?type=recruit" class="link-arrow text-base lg:text-lg" style="color:#5599ff">エントリーする</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY KANOU -->
+  <section class="py-28 lg:py-40 bg-white">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center mb-16 lg:mb-20">
+        <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
+          Why Kanou
+        </p>
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+          加納設備で働く、<br />3つの理由。
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {reasons.map((r, i) => (
+          <div class="reveal p-10 bg-[#f5f5f7] rounded-3xl" style={`transition-delay: ${i * 100}ms`}>
+            <p class="text-5xl font-black text-[#0066cc] mb-6">0{i + 1}</p>
+            <h3 class="text-2xl font-bold text-[#1d1d1f] mb-4">{r.title}</h3>
+            <p class="text-base text-[#1d1d1f] leading-relaxed">{r.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- A DAY -->
+  <section class="py-28 lg:py-40 bg-[#f5f5f7]">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="text-center mb-16">
+        <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
+          A Day
+        </p>
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+          ある一日の流れ。
+        </h2>
+      </div>
+      <ol class="reveal relative border-l border-[#d2d2d7] pl-8 space-y-8">
+        {dailyFlow.map((d) => (
+          <li class="relative">
+            <span class="absolute -left-[42px] top-0 w-9 h-9 bg-[#1d1d1f] text-white text-[11px] font-bold rounded-full flex items-center justify-center">
+              {d.time.split(':')[0]}
+            </span>
+            <div class="bg-white rounded-2xl p-6 border border-[#d2d2d7]">
+              <div class="flex items-baseline gap-3 mb-1">
+                <span class="text-sm font-bold text-[#0066cc]">{d.time}</span>
+                <h3 class="text-base font-bold text-[#1d1d1f]">{d.task}</h3>
+              </div>
+              <p class="text-sm text-[#1d1d1f]">{d.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-28 lg:py-40 bg-white">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center mb-16 lg:mb-20">
+        <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
+          Benefits
+        </p>
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+          福利厚生
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {benefits.map((b, i) => (
+          <div class="reveal p-8 bg-[#f5f5f7] rounded-2xl" style={`transition-delay: ${(i % 3) * 80}ms`}>
+            <h3 class="text-lg font-bold text-[#1d1d1f] mb-2">{b.title}</h3>
+            <p class="text-sm text-[#1d1d1f] leading-relaxed">{b.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICES -->
+  <section class="py-28 lg:py-40 bg-[#f5f5f7]">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center mb-16 lg:mb-20">
+        <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
+          Voices
+        </p>
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+          先輩・パートナーの声。
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {voices.map((v, i) => (
+          <div class="reveal p-8 bg-white rounded-2xl border border-[#d2d2d7]" style={`transition-delay: ${i * 100}ms`}>
+            <svg class="w-8 h-8 text-[#0066cc] mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9.5 7c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7zm9 0c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7z"/>
+            </svg>
+            <p class="text-[#1d1d1f] leading-relaxed mb-6">{v.quote}</p>
+            <p class="text-sm font-bold text-[#1d1d1f]">{v.name}</p>
+            <p class="text-xs text-[#1d1d1f]">{v.age}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section id="requirements" class="py-28 lg:py-40 bg-white scroll-mt-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="text-center mb-16">
+        <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
+          Requirements
+        </p>
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+          募集要項
+        </h2>
+      </div>
+      <div class="reveal bg-[#f5f5f7] rounded-2xl overflow-hidden">
+        <dl class="divide-y divide-[#d2d2d7]">
+          {requirements.map((r) => (
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 px-6 py-5">
+              <dt class="text-sm font-semibold text-[#1d1d1f]">{r.label}</dt>
+              <dd class="sm:col-span-3 text-sm text-[#1d1d1f]">{r.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER -->
+  <section class="py-28 lg:py-40 bg-[#1d1d1f] text-white">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <p class="reveal text-[13px] sm:text-sm font-semibold text-[#5599ff] tracking-[0.2em] uppercase mb-5">
+        Partner
+      </p>
+      <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
+        協力会社募集。
+      </h2>
+      <p class="reveal text-lg text-[#d2d2d7] font-light max-w-2xl mx-auto mb-10">
+        当社では、長くお付き合いいただける協力会社様を募集しております。<br />
+        上下水道・空調・ガス・消防設備・衛生のいずれの分野でも、お気軽にご相談ください。
+      </p>
+      <a href="/contact?type=partner" class="reveal inline-flex items-center px-8 py-3 bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] text-base font-medium rounded-full transition">協力会社のご相談</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 lg:py-32 bg-[#f5f5f7] text-center">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f] mb-6">
+        エントリー・お問い合わせ。
+      </h2>
+      <p class="reveal text-lg text-[#1d1d1f] font-light mb-10">
+        まずはお気軽にご連絡ください。見学のみのご応募も歓迎です。
+      </p>
+      <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+        <a href={`tel:${company.phone}`} class="flex flex-col items-center justify-center px-8 py-7 bg-white rounded-2xl border border-[#d2d2d7] hover:border-[#1d1d1f] transition">
+          <span class="text-[11px] text-[#1d1d1f] tracking-[0.2em] uppercase mb-2">Call</span>
+          <span class="text-2xl lg:text-3xl font-bold text-[#1d1d1f]">{company.phone}</span>
+        </a>
+        <a href="/contact?type=recruit" class="flex flex-col items-center justify-center px-8 py-7 bg-[#1d1d1f] hover:bg-black text-white rounded-2xl transition">
+          <span class="text-[11px] text-[#d2d2d7] tracking-[0.2em] uppercase mb-2">Form</span>
+          <span class="text-2xl lg:text-3xl font-bold">エントリーフォーム</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
