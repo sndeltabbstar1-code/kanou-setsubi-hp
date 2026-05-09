@@ -31,7 +31,7 @@ export const services: Service[] = [
     slug: 'gas',
     title: 'ガス設備',
     short: '都市ガス・LPガス、安全第一の施工',
-    description: '都市ガス・プロパンの配管、ガス機器設置、対応。',
+    description: '都市ガス・プロパンの配管、ガス機器設置まで対応。\n法令遵守と安全点検を徹底し、暮らしの基盤を支えます。',
     icon: 'gas',
     features: ['都市ガス', 'LPガス', 'ガス機器設置'],
     bgImages: ['/images/services/gas-pipe.png', '/images/services/gas-meter.png'],
