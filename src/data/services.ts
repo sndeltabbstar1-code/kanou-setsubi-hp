@@ -49,7 +49,7 @@ export const services: Service[] = [
     slug: 'sanitary',
     title: '衛生設備',
     short: '清潔で快適な、水まわり空間',
-    description: '住宅から商業施設、公共施設のトイレ・キッチン・浴室・洗面など、衛生器具の設計・施工・リフォームに対応します。',
+    description: '住宅から商業施設、公共施設のトイレ・キッチン・浴室・洗面など、\n衛生器具の設計・施工・リフォームに対応します。',
     icon: 'sanitary',
     features: ['トイレ・洗面・浴室', '厨房設備', '給湯設備', 'バリアフリー対応'],
     bgImages: ['/images/services/sanitary-kitchen.png', '/images/services/sanitary-toilet.png'],
