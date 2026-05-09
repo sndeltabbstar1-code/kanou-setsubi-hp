@@ -52,5 +52,6 @@ export const services: Service[] = [
     description: '住宅から商業施設、公共施設のトイレ・キッチン・浴室・洗面など、衛生器具の設計・施工・リフォームに対応します。',
     icon: 'sanitary',
     features: ['トイレ・洗面・浴室', '厨房設備', '給湯設備', 'バリアフリー対応'],
+    bgImages: ['/images/services/sanitary-kitchen.png', '/images/services/sanitary-toilet.png'],
   },
 ];
