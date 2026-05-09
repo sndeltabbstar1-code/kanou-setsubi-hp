@@ -31,9 +31,9 @@ export const services: Service[] = [
     slug: 'gas',
     title: 'ガス設備',
     short: '都市ガス・LPガス、安全第一の施工',
-    description: '都市ガス・プロパンの配管、ガス機器設置、バルク供給設備まで対応。法令遵守と安全管理を徹底します。',
+    description: '都市ガス・プロパンの配管、ガス機器設置、対応。',
     icon: 'gas',
-    features: ['ガス配管工事', 'ガス機器設置', 'LPGバルク設備', '定期点検'],
+    features: ['都市ガス', 'LPガス', 'ガス機器設置'],
     bgImages: ['/images/services/gas-pipe.png', '/images/services/gas-meter.png'],
   },
   {
