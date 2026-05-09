@@ -43,6 +43,7 @@ export const services: Service[] = [
     description: '屋内消火栓、スプリンクラー、自動火災報知設備など、消防法令に基づく設計・施工・点検まで対応します。',
     icon: 'fire',
     features: ['屋内消火栓設備', 'スプリンクラー', '自動火災報知設備', '消防点検報告'],
+    bgImages: ['/images/services/fire-pump.png', '/images/services/fire-hose.png'],
   },
   {
     slug: 'sanitary',
