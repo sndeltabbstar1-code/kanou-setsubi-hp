@@ -13,9 +13,9 @@ export const services: Service[] = [
     slug: 'water',
     title: '上下水道設備',
     short: 'くらしと産業の根幹を支える水回りインフラ',
-    description: '給水・排水・雨水・浄化槽まで、住宅から公共施設まで幅広く対応。本管接続から宅内配管、メンテナンスまで一貫施工します。',
+    description: '給水・排水・雨水・浄化槽まで、住宅から公共施設まで幅広く対応。\n本管接続から宅内配管、メンテナンスまで一貫施工します。',
     icon: 'water',
-    features: ['給水・排水管設備', '本管接続工事', '浄化槽・受水槽', '漏水調査・修繕'],
+    features: ['給水・排水管設備', '本管接続工事', '浄化槽・受水槽'],
     bgImages: ['/images/services/water-supply.png', '/images/services/water-drainage.png'],
   },
   {
