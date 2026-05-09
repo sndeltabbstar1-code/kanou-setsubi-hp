@@ -59,12 +59,25 @@ h1, h2, h3, h4 {
 
 @media (prefers-reduced-motion: no-preference) {
   .reveal:not(.is-visible) {
-    opacity: 0.001;
+    opacity: 0;
     transform: translateY(28px);
   }
   .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Observer 失敗時のフェイルセーフ: 2秒経っても is-visible が付かない場合は強制表示 */
+@keyframes revealFallback {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal:not(.is-visible) {
+    animation: revealFallback 0.8s cubic-bezier(0.22, 1, 0.36, 1) 2s forwards;
   }
 }
 
