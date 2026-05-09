@@ -22,7 +22,7 @@ export const services: Service[] = [
     slug: 'air',
     title: '空調設備',
     short: '快適な室内環境を、最適な設計で',
-    description: '業務用エアコン、ビル用マルチ、家庭用エアコンまで対応。EHP/GHPの選定から冷媒配管、メンテナンスまで対応します。',
+    description: '業務用エアコン、ビル用マルチ、家庭用エアコンまで対応。\nEHP/GHPの選定から冷媒配管、メンテナンスまで対応します。',
     icon: 'air',
     features: ['業務用エアコン設置', 'ビル用マルチ', '家庭用空調', '冷媒配管・更新工事'],
     bgImages: ['/images/services/air-outdoor.png', '/images/services/air-indoor.png'],
