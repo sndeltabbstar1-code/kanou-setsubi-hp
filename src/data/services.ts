@@ -5,6 +5,7 @@ export type Service = {
   description: string;
   icon: string;
   features: string[];
+  bgImages?: [string, string];
 };
 
 export const services: Service[] = [
@@ -23,6 +24,7 @@ export const services: Service[] = [
     description: '業務用エアコン、ビル用マルチ、家庭用エアコンまで対応。EHP/GHPの選定から冷媒配管、メンテナンスまで対応します。',
     icon: 'air',
     features: ['業務用エアコン設置', 'ビル用マルチ', '家庭用空調', '冷媒配管・更新工事'],
+    bgImages: ['/images/services/air-outdoor.png', '/images/services/air-indoor.png'],
   },
   {
     slug: 'gas',
