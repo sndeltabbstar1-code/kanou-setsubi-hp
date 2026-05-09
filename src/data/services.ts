@@ -34,6 +34,7 @@ export const services: Service[] = [
     description: '都市ガス・プロパンの配管、ガス機器設置、バルク供給設備まで対応。法令遵守と安全管理を徹底します。',
     icon: 'gas',
     features: ['ガス配管工事', 'ガス機器設置', 'LPGバルク設備', '定期点検'],
+    bgImages: ['/images/services/gas-pipe.png', '/images/services/gas-meter.png'],
   },
   {
     slug: 'fire',
