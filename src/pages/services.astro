@@ -118,13 +118,13 @@ import { services } from '../data/services';
           { step: '01', title: '現地調査・ヒアリング', desc: '現場を拝見し、ご要望や課題を丁寧にお伺いします。' },
           { step: '02', title: '設計・お見積り', desc: '最適な仕様をご提案。お見積りは無料です。' },
           { step: '03', title: '施工', desc: '有資格者による安全管理のもと、確実に施工します。' },
-          { step: '04', title: '完了検査・引渡し', desc: '完了検査の上、お引渡し。アフターも継続対応。' },
+          { step: '04', title: '完了検査・引渡し', desc: '完了検査の上、お引渡し。\nアフターも継続対応。' },
         ].map((p, i) => (
           <li class="reveal" style={`transition-delay: ${i * 80}ms`}>
-            <div class="border-t border-[#1d1d1f] pt-6">
+            <div class="border-t border-black pt-6">
               <p class="text-sm font-semibold text-[#0066cc] tracking-wider mb-3">{p.step}</p>
-              <h3 class="text-xl lg:text-2xl font-bold text-[#1d1d1f] mb-3">{p.title}</h3>
-              <p class="text-base text-[#1d1d1f] font-light leading-relaxed">{p.desc}</p>
+              <h3 class="text-xl lg:text-2xl font-bold text-black mb-3">{p.title}</h3>
+              <p class="text-base text-black font-light leading-relaxed whitespace-pre-line">{p.desc}</p>
             </div>
           </li>
         ))}
