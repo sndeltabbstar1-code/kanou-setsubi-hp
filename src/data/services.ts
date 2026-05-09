@@ -6,6 +6,7 @@ export type Service = {
   icon: string;
   features: string[];
   bgImages?: [string, string];
+  detailedWorks?: string[];
 };
 
 export const services: Service[] = [
@@ -17,6 +18,16 @@ export const services: Service[] = [
     icon: 'water',
     features: ['給水・排水管設備', '本管接続工事', '浄化槽・受水槽'],
     bgImages: ['/images/services/water-supply.png', '/images/services/water-drainage.png'],
+    detailedWorks: [
+      '給水本管接続工事',
+      '宅内給水管布設・更新',
+      '排水管・桝設置工事',
+      '雨水排水設備',
+      '浄化槽の設置・撤去',
+      '受水槽・高架水槽工事',
+      '漏水調査・補修',
+      '公共下水道接続工事',
+    ],
   },
   {
     slug: 'air',
@@ -26,6 +37,16 @@ export const services: Service[] = [
     icon: 'air',
     features: ['業務用エアコン設置', 'ビル用マルチ', '家庭用空調', '冷媒配管・更新工事'],
     bgImages: ['/images/services/air-outdoor.png', '/images/services/air-indoor.png'],
+    detailedWorks: [
+      '業務用エアコン新設・更新',
+      'ビル用マルチエアコン',
+      '家庭用ルームエアコン',
+      '冷媒配管工事',
+      'EHP・GHPの選定・施工',
+      '空調機器の点検・メンテナンス',
+      '室外機架台・防球フェンス',
+      '熱源更新・省エネ提案',
+    ],
   },
   {
     slug: 'gas',
@@ -35,6 +56,16 @@ export const services: Service[] = [
     icon: 'gas',
     features: ['都市ガス', 'LPガス', 'ガス機器設置'],
     bgImages: ['/images/services/gas-pipe.png', '/images/services/gas-meter.png'],
+    detailedWorks: [
+      '都市ガス配管工事',
+      'LPガス設備工事',
+      'LPGバルク供給設備',
+      'ガス機器設置・取替',
+      '給湯器の交換・修理',
+      'ガス漏れ点検・修理',
+      '法定定期点検',
+      '消費機器調査・届出',
+    ],
   },
   {
     slug: 'fire',
@@ -44,6 +75,16 @@ export const services: Service[] = [
     icon: 'fire',
     features: ['消火設備', '自動火災報知設備', '避難設備', '消防点検報告'],
     bgImages: ['/images/services/fire-pump.png', '/images/services/fire-hose.png'],
+    detailedWorks: [
+      '屋内消火栓設備',
+      'スプリンクラー設備',
+      '自動火災報知設備',
+      '連結送水管設備',
+      '避難設備（誘導灯・避難はしご）',
+      '消防用水・水源工事',
+      '消防点検・報告書作成',
+      '消防同意・届出書類作成',
+    ],
   },
   {
     slug: 'sanitary',
@@ -53,5 +94,15 @@ export const services: Service[] = [
     icon: 'sanitary',
     features: ['トイレ・洗面・浴室', '厨房設備', '給湯設備', '住宅設備'],
     bgImages: ['/images/services/sanitary-kitchen.png', '/images/services/sanitary-toilet.png'],
+    detailedWorks: [
+      'トイレ・便器の設置・取替',
+      '洗面台・キッチンの交換',
+      '浴室リフォーム（ユニットバス）',
+      '給湯器の設置・交換',
+      '厨房給排水設備',
+      '住宅設備リフォーム',
+      '排水詰まり・水漏れ修繕',
+      '水栓・蛇口交換',
+    ],
   },
 ];

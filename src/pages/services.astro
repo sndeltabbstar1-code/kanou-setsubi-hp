@@ -79,10 +79,69 @@ import { services } from '../data/services';
               </li>
             ))}
           </ul>
+
+          {s.detailedWorks && (
+            <div class="reveal mt-20 lg:mt-24 max-w-3xl mx-auto text-left">
+              <p class={`text-[13px] font-semibold tracking-[0.2em] uppercase mb-6 text-center ${dark ? 'text-[#5599ff]' : 'text-[#0066cc]'}`}>
+                Works
+              </p>
+              <h3 class={`text-2xl lg:text-3xl font-bold mb-8 text-center ${dark ? 'text-white' : 'text-[#1d1d1f]'}`}>
+                主な対応工事
+              </h3>
+              <ul class={`grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-base lg:text-lg ${dark ? 'text-[#f5f5f7]' : 'text-[#1d1d1f]'}`}>
+                {s.detailedWorks.map((w) => (
+                  <li class="flex items-start gap-3">
+                    <span class={`mt-2 inline-block w-1.5 h-1.5 rounded-full flex-shrink-0 ${dark ? 'bg-[#5599ff]' : 'bg-[#0066cc]'}`}></span>
+                    <span>{w}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div class="reveal mt-16">
+            <a href={`/works#${s.slug}`} class={`link-arrow text-base lg:text-lg ${dark ? 'text-[#5599ff] hover:text-[#88bbff]' : ''}`}>
+              {s.title}の施工事例を見る
+            </a>
+          </div>
         </div>
       </section>
     );
   })}
+
+  <!-- 施工の流れ -->
+  <section class="py-28 lg:py-40 bg-white">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center mb-16 lg:mb-20">
+        <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
+          Process
+        </p>
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-7xl text-[#1d1d1f]">
+          施工の流れ
+        </h2>
+        <p class="reveal mt-6 text-lg text-[#1d1d1f] font-light max-w-2xl mx-auto">
+          ご相談から完了まで、すべて自社で一貫対応します。
+        </p>
+      </div>
+
+      <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        {[
+          { step: '01', title: '現地調査・ヒアリング', desc: '現場を拝見し、ご要望や課題を丁寧にお伺いします。' },
+          { step: '02', title: '設計・お見積り', desc: '最適な仕様をご提案。お見積りは無料です。' },
+          { step: '03', title: '施工', desc: '有資格者による安全管理のもと、確実に施工します。' },
+          { step: '04', title: '完了検査・引渡し', desc: '完了検査の上、お引渡し。アフターも継続対応。' },
+        ].map((p, i) => (
+          <li class="reveal" style={`transition-delay: ${i * 80}ms`}>
+            <div class="border-t border-[#1d1d1f] pt-6">
+              <p class="text-sm font-semibold text-[#0066cc] tracking-wider mb-3">{p.step}</p>
+              <h3 class="text-xl lg:text-2xl font-bold text-[#1d1d1f] mb-3">{p.title}</h3>
+              <p class="text-base text-[#1d1d1f] font-light leading-relaxed">{p.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
 
   <!-- CTA -->
   <section class="py-24 lg:py-32 bg-white text-center">
