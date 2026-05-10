@@ -90,7 +90,7 @@ const reasons = [
         <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
           Why Kanou
         </p>
-        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-black">
           加納設備で働く、<br />3つの理由。
         </h2>
       </div>
@@ -98,8 +98,8 @@ const reasons = [
         {reasons.map((r, i) => (
           <div class="reveal p-10 bg-[#f5f5f7] rounded-3xl" style={`transition-delay: ${i * 100}ms`}>
             <p class="text-5xl font-black text-[#0066cc] mb-6">0{i + 1}</p>
-            <h3 class="text-2xl font-bold text-[#1d1d1f] mb-4">{r.title}</h3>
-            <p class="text-base text-[#1d1d1f] leading-relaxed">{r.text}</p>
+            <h3 class="text-2xl font-bold text-black mb-4">{r.title}</h3>
+            <p class="text-base text-black leading-relaxed">{r.text}</p>
           </div>
         ))}
       </div>
@@ -113,7 +113,7 @@ const reasons = [
         <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
           A Day
         </p>
-        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-black">
           ある一日の流れ。
         </h2>
       </div>
@@ -126,9 +126,9 @@ const reasons = [
             <div class="bg-white rounded-2xl p-6 border border-[#d2d2d7]">
               <div class="flex items-baseline gap-3 mb-1">
                 <span class="text-sm font-bold text-[#0066cc]">{d.time}</span>
-                <h3 class="text-base font-bold text-[#1d1d1f]">{d.task}</h3>
+                <h3 class="text-base font-bold text-black">{d.task}</h3>
               </div>
-              <p class="text-sm text-[#1d1d1f]">{d.desc}</p>
+              <p class="text-sm text-black">{d.desc}</p>
             </div>
           </li>
         ))}
@@ -143,15 +143,15 @@ const reasons = [
         <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
           Benefits
         </p>
-        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-black">
           福利厚生
         </h2>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {benefits.map((b, i) => (
           <div class="reveal p-8 bg-[#f5f5f7] rounded-2xl" style={`transition-delay: ${(i % 3) * 80}ms`}>
-            <h3 class="text-lg font-bold text-[#1d1d1f] mb-2">{b.title}</h3>
-            <p class="text-sm text-[#1d1d1f] leading-relaxed">{b.text}</p>
+            <h3 class="text-lg font-bold text-black mb-2">{b.title}</h3>
+            <p class="text-sm text-black leading-relaxed">{b.text}</p>
           </div>
         ))}
       </div>
@@ -165,7 +165,7 @@ const reasons = [
         <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
           Voices
         </p>
-        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-black">
           先輩・パートナーの声。
         </h2>
       </div>
@@ -175,9 +175,9 @@ const reasons = [
             <svg class="w-8 h-8 text-[#0066cc] mb-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M9.5 7c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7zm9 0c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7z"/>
             </svg>
-            <p class="text-[#1d1d1f] leading-relaxed mb-6">{v.quote}</p>
-            <p class="text-sm font-bold text-[#1d1d1f]">{v.name}</p>
-            <p class="text-xs text-[#1d1d1f]">{v.age}</p>
+            <p class="text-black leading-relaxed mb-6">{v.quote}</p>
+            <p class="text-sm font-bold text-black">{v.name}</p>
+            <p class="text-xs text-black">{v.age}</p>
           </div>
         ))}
       </div>
@@ -191,7 +191,7 @@ const reasons = [
         <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5">
           Requirements
         </p>
-        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f]">
+        <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-black">
           募集要項
         </h2>
       </div>
@@ -199,8 +199,8 @@ const reasons = [
         <dl class="divide-y divide-[#d2d2d7]">
           {requirements.map((r) => (
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 px-6 py-5">
-              <dt class="text-sm font-semibold text-[#1d1d1f]">{r.label}</dt>
-              <dd class="sm:col-span-3 text-sm text-[#1d1d1f]">{r.value}</dd>
+              <dt class="text-sm font-semibold text-black">{r.label}</dt>
+              <dd class="sm:col-span-3 text-sm text-black">{r.value}</dd>
             </div>
           ))}
         </dl>
@@ -221,23 +221,23 @@ const reasons = [
         当社では、長くお付き合いいただける協力会社様を募集しております。<br />
         上下水道・空調・ガス・消防設備・衛生のいずれの分野でも、お気軽にご相談ください。
       </p>
-      <a href="/contact?type=partner" class="reveal inline-flex items-center px-8 py-3 bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] text-base font-medium rounded-full transition">協力会社のご相談</a>
+      <a href="/contact?type=partner" class="reveal inline-flex items-center px-8 py-3 bg-white hover:bg-[#f5f5f7] text-black text-base font-medium rounded-full transition">協力会社のご相談</a>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="py-24 lg:py-32 bg-[#f5f5f7] text-center">
     <div class="mx-auto max-w-4xl px-6">
-      <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-[#1d1d1f] mb-6">
+      <h2 class="reveal headline text-4xl sm:text-5xl lg:text-6xl text-black mb-6">
         エントリー・お問い合わせ。
       </h2>
-      <p class="reveal text-lg text-[#1d1d1f] font-light mb-10">
+      <p class="reveal text-lg text-black font-light mb-10">
         まずはお気軽にご連絡ください。見学のみのご応募も歓迎です。
       </p>
       <div class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
         <a href={`tel:${company.phone}`} class="flex flex-col items-center justify-center px-8 py-7 bg-white rounded-2xl border border-[#d2d2d7] hover:border-[#1d1d1f] transition">
-          <span class="text-[11px] text-[#1d1d1f] tracking-[0.2em] uppercase mb-2">Call</span>
-          <span class="text-2xl lg:text-3xl font-bold text-[#1d1d1f]">{company.phone}</span>
+          <span class="text-[11px] text-black tracking-[0.2em] uppercase mb-2">Call</span>
+          <span class="text-2xl lg:text-3xl font-bold text-black">{company.phone}</span>
         </a>
         <a href="/contact?type=recruit" class="flex flex-col items-center justify-center px-8 py-7 bg-[#1d1d1f] hover:bg-black text-white rounded-2xl transition">
           <span class="text-[11px] text-[#d2d2d7] tracking-[0.2em] uppercase mb-2">Form</span>
