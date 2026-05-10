@@ -171,15 +171,16 @@ export const works: Work[] = [
   // 衛生 ×3
   {
     id: 'sanitary-001',
-    title: '準備中',
+    title: '学校内トイレ改修工事',
     category: 'sanitary',
     categoryLabel: '衛生',
     client: '準備中',
-    location: '準備中',
+    location: '本庄市内',
     year: '2025',
     scope: '便器・床・配管・乾式化',
     description: '準備中',
-    image: '/images/works/sanitary-01.jpg',
+    image: '/images/works/sanitary-01.png',
+    imageReady: true,
   },
   {
     id: 'sanitary-002',
