@@ -5,7 +5,10 @@ import { works } from '../data/works';
 import { company } from '../data/company';
 import { awards } from '../data/awards';
 
-const featuredWorks = works.slice(0, 6);
+const featuredIds = ['water-001', 'water-002', 'water-003', 'gas-001', 'air-001', 'fire-001'];
+const featuredWorks = featuredIds
+  .map((id) => works.find((w) => w.id === id))
+  .filter((w): w is NonNullable<typeof w> => w !== undefined);
 const highlightedAwards = awards.filter((a) => a.highlight);
 ---
 

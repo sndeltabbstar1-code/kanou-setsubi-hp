@@ -95,15 +95,16 @@ export const works: Work[] = [
   // ガス ×3
   {
     id: 'gas-001',
-    title: '準備中',
+    title: '学校内給湯器交換工事',
     category: 'gas',
     categoryLabel: 'ガス',
     client: '準備中',
-    location: '準備中',
+    location: '本庄市内',
     year: '2025',
-    scope: '都市ガス配管・機器接続',
+    scope: 'ガス機器交換・配管接続',
     description: '準備中',
-    image: '/images/works/gas-01.jpg',
+    image: '/images/works/gas-01.png',
+    imageReady: true,
   },
   {
     id: 'gas-002',
