@@ -68,7 +68,7 @@ export const works: Work[] = [
   },
   {
     id: 'fire-004',
-    title: '学校内消火設備更新',
+    title: '学校内消火設備更新工事',
     category: 'fire',
     categoryLabel: '消防設備',
     client: '準備中',
