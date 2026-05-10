@@ -11,21 +11,23 @@ export type Work = {
   scope: string;
   description: string;
   image: string;
+  imageReady?: boolean;
 };
 
 export const works: Work[] = [
   // 上下水道 ×3
   {
     id: 'water-001',
-    title: '準備中',
+    title: '上水道配水管敷設替工事',
     category: 'water',
     categoryLabel: '上下水道',
     client: '準備中',
-    location: '準備中',
+    location: '本庄市',
     year: '2025',
     scope: '給水管更新・排水管更新',
     description: '準備中',
-    image: '/images/works/water-01.jpg',
+    image: '/images/works/water-01.png',
+    imageReady: true,
   },
   {
     id: 'water-002',
