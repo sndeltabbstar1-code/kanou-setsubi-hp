@@ -1,4 +1,4 @@
-export type WorkCategory = 'water' | 'air' | 'fire' | 'sanitary';
+export type WorkCategory = 'water' | 'air' | 'gas' | 'fire' | 'sanitary';
 
 export type Work = {
   id: string;
@@ -87,6 +87,43 @@ export const works: Work[] = [
     scope: 'GHP本体・配管・試運転',
     description: '準備中',
     image: '/images/works/air-03.jpg',
+  },
+  // ガス ×3
+  {
+    id: 'gas-001',
+    title: '準備中',
+    category: 'gas',
+    categoryLabel: 'ガス',
+    client: '準備中',
+    location: '準備中',
+    year: '2025',
+    scope: '都市ガス配管・機器接続',
+    description: '準備中',
+    image: '/images/works/gas-01.jpg',
+  },
+  {
+    id: 'gas-002',
+    title: '準備中',
+    category: 'gas',
+    categoryLabel: 'ガス',
+    client: '準備中',
+    location: '準備中',
+    year: '2024',
+    scope: 'LPガス設備・バルク',
+    description: '準備中',
+    image: '/images/works/gas-02.jpg',
+  },
+  {
+    id: 'gas-003',
+    title: '準備中',
+    category: 'gas',
+    categoryLabel: 'ガス',
+    client: '準備中',
+    location: '準備中',
+    year: '2024',
+    scope: 'ガス機器設置・取替',
+    description: '準備中',
+    image: '/images/works/gas-03.jpg',
   },
   // 消防設備 ×3
   {
