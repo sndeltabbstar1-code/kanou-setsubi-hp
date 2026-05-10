@@ -70,7 +70,7 @@ export const works: Work[] = [
   },
   {
     id: 'air-002',
-    title: '運動公園空調設置工事',
+    title: '運動公園空調更新工事',
     category: 'air',
     categoryLabel: '空調',
     client: '準備中',
@@ -185,7 +185,7 @@ export const works: Work[] = [
   },
   {
     id: 'sanitary-002',
-    title: '町内公園高架水槽設置工事',
+    title: '町内公園高架水槽更新工事',
     category: 'sanitary',
     categoryLabel: '衛生',
     client: '準備中',
