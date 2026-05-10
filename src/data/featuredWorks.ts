@@ -1,0 +1,87 @@
+// トップページ施工事例セクション専用データ
+// /works ページの works.ts とは独立して管理する
+// 並び順 = トップページの表示順（左上から右下へ）
+
+import type { Work } from './works';
+
+export const featuredWorks: Work[] = [
+  // 1段目
+  {
+    id: 'featured-01',
+    title: '上水道配水管敷設替工事',
+    category: 'water',
+    categoryLabel: '上下水道',
+    client: '準備中',
+    location: '本庄市',
+    year: '2025',
+    scope: '給水管更新・排水管更新',
+    description: '準備中',
+    image: '/images/works/water-01.png',
+    imageReady: true,
+  },
+  {
+    id: 'featured-02',
+    title: '下水道取付管設置工事',
+    category: 'water',
+    categoryLabel: '上下水道',
+    client: '準備中',
+    location: '本庄市',
+    year: '2025',
+    scope: '取付管設置・本管接続',
+    description: '準備中',
+    image: '/images/works/water-02.png',
+    imageReady: true,
+  },
+  {
+    id: 'featured-03',
+    title: '準備中',
+    category: 'water',
+    categoryLabel: '上下水道',
+    client: '準備中',
+    location: '準備中',
+    year: '2024',
+    scope: '雨水排水管・浸透桝',
+    description: '準備中',
+    image: '/images/works/water-03.jpg',
+  },
+  // 2段目
+  {
+    id: 'featured-04',
+    title: '学校内給湯器交換工事',
+    category: 'gas',
+    categoryLabel: 'ガス',
+    client: '準備中',
+    location: '本庄市内',
+    year: '2025',
+    scope: 'ガス機器交換・配管接続',
+    description: '準備中',
+    image: '/images/works/gas-01.png',
+    imageReady: true,
+  },
+  {
+    id: 'featured-05',
+    title: '学校体育館空調設置工事',
+    category: 'air',
+    categoryLabel: '空調',
+    client: '準備中',
+    location: '本庄市',
+    year: '2026',
+    scope: 'EHP空調機・冷媒配管・電気工事',
+    description: '準備中',
+    image: '/images/works/air-01.png',
+    imageReady: true,
+  },
+  {
+    id: 'featured-06',
+    title: '学校内消火設備更新工事',
+    category: 'fire',
+    categoryLabel: '消防設備',
+    client: '準備中',
+    location: '本庄市',
+    year: '2025',
+    scope: '屋内消火栓・配管・ポンプ',
+    description: '準備中',
+    image: '/images/works/fire-01.png',
+    imageReady: true,
+  },
+];
