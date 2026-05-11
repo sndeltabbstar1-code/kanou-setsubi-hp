@@ -18,7 +18,7 @@ export const awards: Award[] = [
     workTitle: 'カミケンシルクドーム空調設備改修工事（第2期）',
     highlight: true,
     image: '/images/awards/award-01.jpg',
-    imageReady: false,
+    imageReady: true,
   },
   {
     yearJp: '令和6年度',
@@ -26,7 +26,7 @@ export const awards: Award[] = [
     workTitle: '小島第二市営住宅3,4号棟給排水管改善工事',
     highlight: true,
     image: '/images/awards/award-02.jpg',
-    imageReady: false,
+    imageReady: true,
   },
   {
     yearJp: '令和5年度',
@@ -34,7 +34,7 @@ export const awards: Award[] = [
     workTitle: '上水道導配水管布設替21-12号工事（本庄道路関連・沼和田外工区）',
     highlight: true,
     image: '/images/awards/award-03.jpg',
-    imageReady: false,
+    imageReady: true,
   },
   {
     yearJp: '令和5年度',
