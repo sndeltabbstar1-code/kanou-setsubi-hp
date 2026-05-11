@@ -23,9 +23,9 @@ const benefits = [
 
 const voices = [
   {
-    name: 'Aさん（入社3年目）',
-    age: '20代後半・未経験入社',
-    quote: '最初は配管も読めなかったけど、先輩が一から教えてくれた。今は一人で現場を任せてもらえるようになりました。',
+    name: 'Iさん（入社4年目）',
+    age: '30代前半・未経験入社',
+    quote: '最初は図面も読めなかったけど、先輩が一から教えてくれた。今は一人で現場を任せてもらえるようになりました。',
   },
   {
     name: 'Bさん（入社7年目）',
@@ -172,9 +172,11 @@ const reasons = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {voices.map((v, i) => (
           <div class="reveal p-8 bg-white rounded-2xl border border-[#d2d2d7]" style={`transition-delay: ${i * 100}ms`}>
-            <svg class="w-8 h-8 text-[#0066cc] mb-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9.5 7c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7zm9 0c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7z"/>
-            </svg>
+            {i !== 0 && (
+              <svg class="w-8 h-8 text-[#0066cc] mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9.5 7c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7zm9 0c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7z"/>
+              </svg>
+            )}
             <p class="text-black leading-relaxed mb-6">{v.quote}</p>
             <p class="text-sm font-bold text-black">{v.name}</p>
             <p class="text-xs text-black">{v.age}</p>
