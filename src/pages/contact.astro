@@ -114,23 +114,23 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdabypkq';
           </button>
         </div>
 
-        <div id="formMsg" class="hidden text-center py-8">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#0066cc]/10 mb-5">
-            <svg class="w-8 h-8 text-[#0066cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h3 class="text-2xl lg:text-3xl font-bold text-[#1d1d1f] mb-4">ありがとうございました</h3>
-          <p class="text-base lg:text-lg text-[#1d1d1f] leading-relaxed">
-            2営業日以内にご返信いたします。<br />
-            担当者からの連絡をお待ちください。
-          </p>
-        </div>
-
         <div id="formErr" class="hidden text-center text-red-600 font-bold py-4">
           送信に失敗しました。通信状況をご確認のうえ、再度お試しください。
         </div>
       </form>
+
+      <div id="formMsg" class="reveal hidden text-center py-16 lg:py-20 bg-[#f5f5f7] rounded-3xl">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#0066cc]/10 mb-5">
+          <svg class="w-8 h-8 text-[#0066cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 class="text-2xl lg:text-3xl font-bold text-[#1d1d1f] mb-4">ありがとうございました</h3>
+        <p class="text-base lg:text-lg text-[#1d1d1f] leading-relaxed">
+          2営業日以内にご返信いたします。<br />
+          担当者からの連絡をお待ちください。
+        </p>
+      </div>
     </div>
   </section>
 </Layout>
@@ -165,9 +165,10 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdabypkq';
       });
 
       if (response.ok) {
+        const scrollTop = form.offsetTop - 80;
         form.style.display = 'none';
         msg?.classList.remove('hidden');
-        window.scrollTo({ top: form.offsetTop - 80, behavior: 'smooth' });
+        window.scrollTo({ top: scrollTop, behavior: 'smooth' });
       } else {
         throw new Error('Submission failed');
       }
