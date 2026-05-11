@@ -56,7 +56,7 @@ export const featuredWorks: Work[] = [
     year: '2025',
     scope: 'ガス機器交換・配管接続',
     description: '準備中',
-    image: '/images/works/gas-01.png',
+    image: '/images/works/gas-02.png',
     imageReady: true,
   },
   {
