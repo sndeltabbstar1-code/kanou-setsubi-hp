@@ -28,8 +28,18 @@ const history = [
 ---
 
 <Layout title="会社概要" description="加納設備株式会社の会社概要。埼玉県本庄市を拠点に設備工事を提供。">
+  <!-- Fixed background (visible through semi-transparent sections) -->
+  <div class="fixed inset-0 -z-10 pointer-events-none">
+    <img
+      src="/images/company/company-bg.jpg"
+      alt=""
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+  </div>
+
   <!-- HERO -->
-  <section class="bg-[#f5f5f7] pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
+  <section class="bg-[#f5f5f7]/85 pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
     <div class="mx-auto max-w-5xl px-6">
       <p class="text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-4 fade-in">
         Company
@@ -45,7 +55,7 @@ const history = [
   </section>
 
   <!-- MESSAGE -->
-  <section class="py-28 lg:py-40 bg-white">
+  <section class="py-28 lg:py-40 bg-white/85">
     <div class="mx-auto max-w-3xl px-6">
       <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5 text-center">
         Message
@@ -73,7 +83,7 @@ const history = [
   </section>
 
   <!-- PROFILE -->
-  <section class="py-28 lg:py-40 bg-[#f5f5f7]">
+  <section class="py-28 lg:py-40 bg-[#f5f5f7]/85">
     <div class="mx-auto max-w-4xl px-6">
       <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5 text-center">
         Profile
@@ -95,7 +105,7 @@ const history = [
   </section>
 
   <!-- HISTORY -->
-  <section class="py-28 lg:py-40 bg-white">
+  <section class="py-28 lg:py-40 bg-white/85">
     <div class="mx-auto max-w-3xl px-6">
       <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5 text-center">
         History
@@ -116,7 +126,7 @@ const history = [
   </section>
 
   <!-- AWARDS -->
-  <section id="awards" class="py-28 lg:py-40 bg-[#f5f5f7] scroll-mt-24">
+  <section id="awards" class="py-28 lg:py-40 bg-[#f5f5f7]/85 scroll-mt-24">
     <div class="mx-auto max-w-5xl px-6">
       <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5 text-center">
         Awards
@@ -162,7 +172,7 @@ const history = [
   </section>
 
   <!-- ACCESS -->
-  <section class="py-28 lg:py-40 bg-white">
+  <section class="py-28 lg:py-40 bg-white/85">
     <div class="mx-auto max-w-5xl px-6">
       <p class="reveal text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-5 text-center">
         Access
