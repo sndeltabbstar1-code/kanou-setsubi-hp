@@ -44,15 +44,16 @@ export const works: Work[] = [
   },
   {
     id: 'water-003',
-    title: '準備中',
+    title: '住宅給水管引込工事',
     category: 'water',
     categoryLabel: '上下水道',
     client: '準備中',
-    location: '準備中',
-    year: '2024',
-    scope: '雨水排水管・浸透桝',
+    location: '本庄市内',
+    year: '2025',
+    scope: '給水管引込・本管接続',
     description: '準備中',
     image: '/images/works/water-03.jpg',
+    imageReady: true,
   },
   // 空調 ×3
   {
