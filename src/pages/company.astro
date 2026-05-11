@@ -116,15 +116,17 @@ const history = [
       <h2 class="reveal headline text-3xl sm:text-4xl lg:text-5xl text-[#1d1d1f] mb-12 text-center">
         沿革
       </h2>
-      <ol class="reveal relative border-l border-[#d2d2d7] pl-8 space-y-10">
-        {history.map((h) => (
-          <li class="relative">
-            <span class="absolute -left-[37px] top-1 w-3.5 h-3.5 bg-[#0066cc] rounded-full border-4 border-white"></span>
-            <p class="text-sm font-semibold text-[#0066cc] mb-1 tracking-wider">{h.year}</p>
-            <p class="text-[#1d1d1f]">{h.text}</p>
-          </li>
-        ))}
-      </ol>
+      <div class="reveal bg-white rounded-2xl border border-[#d2d2d7] p-8 lg:p-12">
+        <ol class="relative border-l border-[#d2d2d7] pl-8 space-y-10">
+          {history.map((h) => (
+            <li class="relative">
+              <span class="absolute -left-[37px] top-1 w-3.5 h-3.5 bg-[#0066cc] rounded-full border-4 border-white"></span>
+              <p class="text-sm font-semibold text-[#0066cc] mb-1 tracking-wider">{h.year}</p>
+              <p class="text-[#1d1d1f]">{h.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   </section>
 
