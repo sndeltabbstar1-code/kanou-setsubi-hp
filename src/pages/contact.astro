@@ -119,7 +119,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdabypkq';
         </div>
       </form>
 
-      <div id="formMsg" class="reveal hidden text-center py-16 lg:py-20 bg-[#f5f5f7] rounded-3xl">
+      <div id="formMsg" class="hidden text-center py-16 lg:py-20 bg-[#f5f5f7] rounded-3xl">
         <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#0066cc]/10 mb-5">
           <svg class="w-8 h-8 text-[#0066cc]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
@@ -152,6 +152,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdabypkq';
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    console.log('[contact] submit handler fired');
     if (!form || !btn) return;
     btn.disabled = true;
     btn.textContent = '送信中…';
@@ -163,16 +164,19 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdabypkq';
         body: new FormData(form),
         headers: { Accept: 'application/json' },
       });
+      console.log('[contact] response status', response.status);
 
       if (response.ok) {
         const scrollTop = form.offsetTop - 80;
         form.style.display = 'none';
         msg?.classList.remove('hidden');
+        console.log('[contact] formMsg shown, hidden class removed');
         window.scrollTo({ top: scrollTop, behavior: 'smooth' });
       } else {
         throw new Error('Submission failed');
       }
     } catch (error) {
+      console.error('[contact] submit error', error);
       btn.disabled = false;
       btn.textContent = '送信する';
       err?.classList.remove('hidden');
