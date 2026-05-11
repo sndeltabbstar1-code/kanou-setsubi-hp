@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { company } from '../data/company';
+---
+
+<Layout title="プライバシーポリシー" description="加納設備株式会社のプライバシーポリシー（個人情報保護方針）。">
+  <!-- HERO -->
+  <section class="bg-[#f5f5f7] pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-4 fade-in">
+        Privacy Policy
+      </p>
+      <h1 class="headline-display text-5xl sm:text-6xl lg:text-7xl text-[#1d1d1f] mb-6 fade-in" style="animation-delay: 0.1s">
+        プライバシーポリシー
+      </h1>
+      <p class="text-base text-[#1d1d1f] font-light fade-in" style="animation-delay: 0.2s">
+        個人情報保護方針
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="reveal space-y-8 text-[#1d1d1f] leading-relaxed">
+        <p>
+          {company.name}（以下「当社」といいます）は、当社が運営するウェブサイトにおける、お客様の個人情報の取り扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。
+        </p>
+
+        <div>
+          <h2 class="text-xl font-bold mb-3">第1条 個人情報の定義</h2>
+          <p>
+            本ポリシーにおいて、「個人情報」とは、個人情報の保護に関する法律第2条第1項に定める個人情報、すなわち生存する個人に関する情報であって、氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報をいいます。
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold mb-3">第2条 個人情報の収集</h2>
+          <p>
+            当社は、お客様がお問い合わせフォームをご利用される際に、以下の情報を取得することがあります。
+          </p>
+          <ul class="list-disc pl-6 mt-3 space-y-1">
+            <li>お名前</li>
+            <li>会社名・学校名</li>
+            <li>メールアドレス</li>
+            <li>電話番号</li>
+            <li>お問い合わせ内容</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold mb-3">第3条 利用目的</h2>
+          <p>当社は、取得した個人情報を以下の目的のために利用します。</p>
+          <ul class="list-disc pl-6 mt-3 space-y-1">
+            <li>お問い合わせ・ご相談への返信およびご回答</li>
+            <li>お見積もり・工事のご依頼に関するご連絡</li>
+            <li>採用エントリーへの対応</li>
+            <li>パートナー企業様との連絡・お取引</li>
+            <li>その他、上記に付随する業務</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold mb-3">第4条 第三者提供</h2>
+          <p>
+            当社は、法令に基づく場合を除き、あらかじめお客様の同意を得ることなく、個人情報を第三者に提供することはありません。ただし、以下の場合はこの限りではありません。
+          </p>
+          <ul class="list-disc pl-6 mt-3 space-y-1">
+            <li>法令に基づく場合</li>
+            <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+            <li>業務委託先に対し、利用目的の達成に必要な範囲で提供する場合</li>
+          </ul>
+          <p class="mt-4">
+            なお、本ウェブサイトのお問い合わせフォームの送信処理は、米国 Formspree Inc. の提供するフォームサービス（Formspree）に委託しています。お客様が送信された情報は、同社のサーバー（米国）を経由して当社に転送されます。同社のプライバシーポリシーは <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener" class="text-[#0066cc] hover:underline">https://formspree.io/legal/privacy-policy</a> をご参照ください。
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold mb-3">第5条 安全管理措置</h2>
+          <p>
+            当社は、個人情報の漏えい、滅失または毀損の防止その他の個人情報の安全管理のために、必要かつ適切な措置を講じます。
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold mb-3">第6条 個人情報の開示・訂正・利用停止等</h2>
+          <p>
+            お客様ご本人から、ご自身の個人情報の開示、訂正、追加、削除、利用停止等のご請求があった場合、ご本人であることを確認のうえ、合理的な範囲で速やかに対応いたします。
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold mb-3">第7条 お問い合わせ窓口</h2>
+          <p>
+            本ポリシーに関するお問い合わせ、および個人情報に関するご請求等は、下記窓口までお願いいたします。
+          </p>
+          <div class="mt-4 bg-[#f5f5f7] rounded-xl p-5 text-sm space-y-1">
+            <p class="font-semibold">{company.name}</p>
+            <p>{company.address}</p>
+            <p>電話: {company.phone}</p>
+            <p>営業時間: {company.hours}</p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold mb-3">第8条 本ポリシーの変更</h2>
+          <p>
+            当社は、必要に応じて本ポリシーを変更することがあります。変更後の本ポリシーは、本ウェブサイトに掲載した時点から効力を生じるものとします。
+          </p>
+        </div>
+
+        <p class="text-right text-sm pt-6">制定日: 2026年5月11日</p>
+      </div>
+    </div>
+  </section>
+</Layout>
