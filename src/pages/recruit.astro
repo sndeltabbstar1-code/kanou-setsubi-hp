@@ -28,8 +28,8 @@ const voices = [
     quote: '最初は図面も読めなかったけど、先輩が一から教えてくれた。今は一人で現場を任せてもらえるようになりました。',
   },
   {
-    name: 'Bさん（入社7年目）',
-    age: '30代前半・現場代理人',
+    name: 'Nさん（入社12年目）',
+    age: '30代後半・現場代理人',
     quote: '公共工事も民間工事も両方経験できる。少数精鋭だから、若いうちから責任ある仕事ができるのが魅力です。',
   },
   {
@@ -172,7 +172,7 @@ const reasons = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {voices.map((v, i) => (
           <div class="reveal p-8 bg-white rounded-2xl border border-[#d2d2d7]" style={`transition-delay: ${i * 100}ms`}>
-            {i !== 0 && (
+            {i === 2 && (
               <svg class="w-8 h-8 text-[#0066cc] mb-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M9.5 7c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7zm9 0c-3 0-5.5 2.5-5.5 5.5V17h6v-4.5h-3c0-1.5 1-2.5 2.5-2.5V7z"/>
               </svg>
