@@ -175,12 +175,12 @@ const highlightedAwards = awards.filter((a) => a.highlight);
       <p class="reveal text-lg text-black font-light max-w-2xl mx-auto mb-12">
         本庄市発注工事において、{awards.length}回の表彰を受けています。
       </p>
-      <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+      <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
         {highlightedAwards.map((a) => (
           <figure class="bg-white rounded-2xl overflow-hidden border border-[#d2d2d7]">
-            <div class="aspect-[3/4] bg-[#f5f5f7] flex items-center justify-center">
+            <div class="aspect-[4/3] bg-white flex items-center justify-center">
               {a.imageReady && a.image ? (
-                <img src={a.image} alt={`${a.yearJp} 表彰状 ${a.workTitle}`} class="w-full h-full object-cover" loading="lazy" />
+                <img src={a.image} alt={`${a.yearJp} 表彰状 ${a.workTitle}`} class="w-full h-full object-contain" loading="lazy" />
               ) : (
                 <span class="text-sm text-black/60">表彰状画像 準備中</span>
               )}
