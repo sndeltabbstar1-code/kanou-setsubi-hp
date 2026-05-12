@@ -15,5 +15,6 @@ export const company = {
   area: '埼玉県本庄市・児玉郡市・深谷市 他',
   hours: '平日 8:00 〜 17:00',
   instagram: 'https://www.instagram.com/', // 後で差し替え
+  tiktok: 'https://www.tiktok.com/', // 後で差し替え
   mapEmbed: 'https://maps.google.com/maps?q=' + encodeURIComponent('加納設備株式会社 埼玉県本庄市見福2-20-19') + '&hl=ja&z=17&output=embed',
 };
