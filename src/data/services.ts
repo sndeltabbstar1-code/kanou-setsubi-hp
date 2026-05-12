@@ -17,7 +17,7 @@ export const services: Service[] = [
     description: '給水・排水・雨水・浄化槽まで、住宅から公共施設まで幅広く対応。\n本管接続から宅内配管、メンテナンスまで一貫施工します。',
     icon: 'water',
     features: ['給水・排水管設備', '本管接続工事', '浄化槽・受水槽'],
-    bgImages: ['/images/services/water-supply.png', '/images/services/water-drainage.png'],
+    bgImages: ['/images/services/water-supply.jpg', '/images/services/water-drainage.jpg'],
     detailedWorks: [
       '給水本管接続工事',
       '宅内給水管布設・更新',
@@ -35,7 +35,7 @@ export const services: Service[] = [
     description: '業務用エアコン、ビル用マルチ、家庭用エアコンまで対応。\nEHP/GHPの選定から冷媒配管、メンテナンスまで対応します。',
     icon: 'air',
     features: ['業務用エアコン設置', 'ビル用マルチ', '家庭用空調', '冷媒配管・更新工事'],
-    bgImages: ['/images/services/air-outdoor.png', '/images/services/air-indoor.png'],
+    bgImages: ['/images/services/air-outdoor.jpg', '/images/services/air-indoor.jpg'],
     detailedWorks: [
       '業務用エアコン新設・更新',
       'ビル用マルチエアコン',
@@ -53,7 +53,7 @@ export const services: Service[] = [
     description: '都市ガス・プロパンの配管、ガス機器設置まで対応。\n法令遵守と安全点検を徹底し、暮らしの基盤を支えます。',
     icon: 'gas',
     features: ['都市ガス', 'LPガス', 'ガス機器設置'],
-    bgImages: ['/images/services/gas-pipe.png', '/images/services/gas-meter.png'],
+    bgImages: ['/images/services/gas-pipe.jpg', '/images/services/gas-meter.jpg'],
     detailedWorks: [
       '都市ガス配管工事',
       'LPガス設備工事',
@@ -69,7 +69,7 @@ export const services: Service[] = [
     description: '屋内消火栓、スプリンクラー、自動火災報知設備など、\n消防法令に基づく設計・施工・点検まで対応します。',
     icon: 'fire',
     features: ['消火設備', '自動火災報知設備', '避難設備', '消防点検報告'],
-    bgImages: ['/images/services/fire-pump.png', '/images/services/fire-hose.png'],
+    bgImages: ['/images/services/fire-pump.jpg', '/images/services/fire-hose.jpg'],
     detailedWorks: [
       '屋内消火栓設備',
       'スプリンクラー設備',
@@ -88,7 +88,7 @@ export const services: Service[] = [
     description: '住宅から商業施設、公共施設のトイレ・キッチン・浴室・洗面など、\n衛生器具の設計・施工・リフォームに対応します。',
     icon: 'sanitary',
     features: ['トイレ・洗面・浴室', '厨房設備', '給湯設備', '住宅設備'],
-    bgImages: ['/images/services/sanitary-kitchen.png', '/images/services/sanitary-toilet.png'],
+    bgImages: ['/images/services/sanitary-kitchen.jpg', '/images/services/sanitary-toilet.jpg'],
     detailedWorks: [
       'トイレ・便器の設置・取替',
       '洗面台・キッチンの交換',

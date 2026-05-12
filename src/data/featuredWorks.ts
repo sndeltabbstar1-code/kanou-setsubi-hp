@@ -16,7 +16,7 @@ export const featuredWorks: Work[] = [
     year: '2025',
     scope: '給水管更新・排水管更新',
     description: '準備中',
-    image: '/images/works/water-01.png',
+    image: '/images/works/water-01.jpg',
     imageReady: true,
   },
   {
@@ -29,7 +29,7 @@ export const featuredWorks: Work[] = [
     year: '2025',
     scope: '取付管設置・本管接続',
     description: '準備中',
-    image: '/images/works/water-02.png',
+    image: '/images/works/water-02.jpg',
     imageReady: true,
   },
   {
@@ -42,7 +42,7 @@ export const featuredWorks: Work[] = [
     year: '2026',
     scope: 'EHP空調機・冷媒配管・電気工事',
     description: '準備中',
-    image: '/images/works/air-01.png',
+    image: '/images/works/air-01.jpg',
     imageReady: true,
   },
   // 2段目
@@ -56,7 +56,7 @@ export const featuredWorks: Work[] = [
     year: '2025',
     scope: 'ガス機器交換・配管接続',
     description: '準備中',
-    image: '/images/works/gas-02.png',
+    image: '/images/works/gas-02.jpg',
     imageReady: true,
   },
   {
@@ -69,7 +69,7 @@ export const featuredWorks: Work[] = [
     year: '2025',
     scope: '屋内消火栓・配管・ポンプ',
     description: '準備中',
-    image: '/images/works/fire-01.png',
+    image: '/images/works/fire-01.jpg',
     imageReady: true,
   },
   {
@@ -82,7 +82,7 @@ export const featuredWorks: Work[] = [
     year: '2025',
     scope: '便器・床・配管・乾式化',
     description: '準備中',
-    image: '/images/works/sanitary-01.png',
+    image: '/images/works/sanitary-01.jpg',
     imageReady: true,
   },
 ];
