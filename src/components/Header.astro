@@ -56,10 +56,14 @@ const currentPath = Astro.url.pathname;
       </button>
     </div>
 
-    <div id="mobile-menu" class="hidden lg:hidden pb-4">
-      <nav class="flex flex-col gap-1">
+    <div id="mobile-menu" class="hidden lg:hidden pb-4 bg-white">
+      <nav class="flex flex-col gap-1 border-t border-[#d2d2d7] pt-3">
         {navItems.map((item) => (
-          <a href={item.href} class="px-3 py-3 text-base font-medium text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-md">
+          <a
+            href={item.href}
+            class="block px-3 py-3 text-base font-semibold text-black hover:bg-[#f5f5f7] rounded-md"
+            style="color: #000000;"
+          >
             {item.label}
           </a>
         ))}
