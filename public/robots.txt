@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kanou-setsubi-hp.pages.dev/sitemap-index.xml
