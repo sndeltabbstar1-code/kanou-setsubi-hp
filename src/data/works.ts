@@ -124,16 +124,15 @@ export const works: Work[] = [
   },
   {
     id: 'gas-003',
-    title: '住宅ガス供給管引込工事',
+    title: '準備中',
     category: 'gas',
     categoryLabel: 'ガス',
     client: '準備中',
-    location: '本庄市内',
+    location: '準備中',
     year: '2025',
     scope: 'ガス供給管引込・本管接続',
     description: '準備中',
     image: '/images/works/gas-03.jpg',
-    imageReady: true,
   },
   // 消防設備 ×3
   {
