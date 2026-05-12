@@ -1,10 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ServiceIcon from '../components/ServiceIcon.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { services } from '../data/services';
 ---
 
 <Layout title="事業内容" description="加納設備株式会社の事業内容。上下水道・空調・ガス・消防設備・衛生設備の設計から施工までを一貫対応。">
+  <Breadcrumb items={[{ label: 'ホーム', href: '/' }, { label: '事業内容' }]} />
   <!-- HERO -->
   <section class="bg-[#f5f5f7] pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
     <div class="mx-auto max-w-5xl px-6">

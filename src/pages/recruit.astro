@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { company } from '../data/company';
 
 const dailyFlow = [
@@ -62,6 +63,7 @@ const reasons = [
 ---
 
 <Layout title="採用情報" description="加納設備株式会社の採用情報。新卒採用・キャリア採用・パートナー企業様、募集中。未経験から始めて長く活躍できる環境があります。">
+  <Breadcrumb items={[{ label: 'ホーム', href: '/' }, { label: '採用情報' }]} />
   <!-- HERO -->
   <section class="relative bg-[#1d1d1f] text-white pt-28 lg:pt-40 pb-28 lg:pb-40 text-center overflow-hidden">
     <div class="absolute inset-0 opacity-30 pointer-events-none">

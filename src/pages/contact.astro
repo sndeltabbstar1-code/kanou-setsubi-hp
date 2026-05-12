@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { company } from '../data/company';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdabypkq';
 ---
 
 <Layout title="お問い合わせ" description="加納設備株式会社へのお問い合わせ。お見積もり・採用エントリー・パートナー企業のご相談はこちらから。">
+  <Breadcrumb items={[{ label: 'ホーム', href: '/' }, { label: 'お問い合わせ' }]} />
   <!-- HERO -->
   <section class="bg-[#f5f5f7] pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
     <div class="mx-auto max-w-5xl px-6">

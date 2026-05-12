@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { company } from '../data/company';
 import { awards, awardName } from '../data/awards';
 
@@ -28,6 +29,7 @@ const history = [
 ---
 
 <Layout title="会社概要" description="加納設備株式会社の会社概要。埼玉県本庄市を拠点に設備工事を提供。">
+  <Breadcrumb items={[{ label: 'ホーム', href: '/' }, { label: '会社概要' }]} />
   <!-- Fixed background (visible through semi-transparent sections) -->
   <div class="fixed inset-0 -z-10 pointer-events-none">
     <img
