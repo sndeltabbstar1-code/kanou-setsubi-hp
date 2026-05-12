@@ -26,49 +26,51 @@ img = Image.new("RGB", (W, H), BG)
 draw = ImageDraw.Draw(img)
 
 # 左帯: アクセントカラーの細い縦ライン (BRAND #1E3A8A)
-draw.rectangle([(0, 0), (12, H)], fill=(30, 58, 138))
+draw.rectangle([(0, 0), (10, H)], fill=(30, 58, 138))
 
-# ロゴ配置 (左)
+# ロゴ配置 (左に大きく)
 logo = Image.open(LOGO).convert("RGBA")
-target_h = 300
+target_h = 530  # 上下余白約50px
 ratio = target_h / logo.height
 new_w = int(logo.width * ratio)
 logo = logo.resize((new_w, target_h), Image.LANCZOS)
 
-logo_x = 70
+logo_x = 30
 logo_y = (H - target_h) // 2
 img.paste(logo, (logo_x, logo_y), logo)
 
 # 右側テキストエリア
-text_x = logo_x + new_w + 50
-text_right = W - 50
+text_x = logo_x + new_w + 30
+text_right = W - 35
 
-f_title = ImageFont.truetype(str(FONT_BOLD), 40)
-f_sub = ImageFont.truetype(str(FONT_REG), 22)
-f_small = ImageFont.truetype(str(FONT_REG), 19)
-f_eyebrow = ImageFont.truetype(str(FONT_BOLD), 17)
+f_title = ImageFont.truetype(str(FONT_BOLD), 30)
+f_sub = ImageFont.truetype(str(FONT_REG), 18)
+f_small = ImageFont.truetype(str(FONT_REG), 16)
+f_eyebrow = ImageFont.truetype(str(FONT_BOLD), 14)
 
 # eyebrow
-draw.text((text_x, 125), "KANOU SETSUBI CO., LTD.", font=f_eyebrow, fill=LINK)
+draw.text((text_x, 110), "KANOU SETSUBI CO., LTD.", font=f_eyebrow, fill=LINK)
 
-# メインタイトル (2行)
-draw.text((text_x, 170), "くらしを支える、", font=f_title, fill=INK)
-draw.text((text_x, 225), "設備のプロフェッショナル。", font=f_title, fill=INK)
+# メインタイトル (3行に分割)
+draw.text((text_x, 150), "くらしを支える、", font=f_title, fill=INK)
+draw.text((text_x, 195), "設備の", font=f_title, fill=INK)
+draw.text((text_x, 240), "プロフェッショナル。", font=f_title, fill=INK)
 
 # 仕切り線
-draw.rectangle([(text_x, 300), (text_x + 80, 303)], fill=LINK)
+draw.rectangle([(text_x, 305), (text_x + 60, 307)], fill=LINK)
 
-# 事業領域
-draw.text((text_x, 325), "上下水道 ／ 空調 ／ ガス", font=f_sub, fill=INK)
-draw.text((text_x, 360), "消防設備 ／ 衛生設備", font=f_sub, fill=INK)
+# 事業領域 (2行)
+draw.text((text_x, 325), "上下水道 ／ 空調", font=f_sub, fill=INK)
+draw.text((text_x, 355), "ガス ／ 消防 ／ 衛生", font=f_sub, fill=INK)
 
 # 地域・創業
-draw.text((text_x, 415), "埼玉県本庄市の総合設備会社", font=f_small, fill=MUTED)
-draw.text((text_x, 442), "創業 昭和36年", font=f_small, fill=MUTED)
+draw.text((text_x, 410), "埼玉県本庄市の", font=f_small, fill=MUTED)
+draw.text((text_x, 435), "総合設備会社", font=f_small, fill=MUTED)
+draw.text((text_x, 470), "創業 昭和36年", font=f_small, fill=MUTED)
 
 # 右下にURL
-f_url = ImageFont.truetype(str(FONT_REG), 17)
-draw.text((text_x, H - 55), "kanou-setsubi-hp.pages.dev", font=f_url, fill=LINK)
+f_url = ImageFont.truetype(str(FONT_REG), 14)
+draw.text((text_x, H - 50), "kanou-setsubi-hp.pages.dev", font=f_url, fill=LINK)
 
 img.save(OUT, "PNG", optimize=True)
 print(f"saved: {OUT}  ({OUT.stat().st_size // 1024} KB)")
