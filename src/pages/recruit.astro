@@ -51,7 +51,7 @@ const requirements = [
   { label: '休日休暇', value: '土日・祝・GW・お盆・年末年始・有給休暇' },
   { label: '給与', value: '月給22万円〜（経験・能力により優遇）' },
   { label: '手当', value: '昇給年1回／賞与年2回／施工管理資格等取得' },
-  { label: '応募資格', value: '高卒以上／普通自動車免許／未経験歓迎／40歳未満\n※年齢制限の理由：長期勤続によるキャリア形成を図るため（労働施策総合推進法施行規則1条の3第1項3号イ）' },
+  { label: '応募資格', value: '高卒以上／普通自動車免許／未経験歓迎／40歳未満\n※年齢制限の理由：長期勤続によるキャリア形成を図るため\n（労働施策総合推進法施行規則1条の3第1項3号イ）' },
   { label: '歓迎する経験', value: '建設・設備系の実務経験／関連資格保有者' },
 ];
 
@@ -203,7 +203,7 @@ const reasons = [
           {requirements.map((r) => (
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 px-6 py-5">
               <dt class="text-sm font-semibold text-black">{r.label}</dt>
-              <dd class="sm:col-span-3 text-sm text-black whitespace-pre-line">{r.value}</dd>
+              <dd class="sm:col-span-3 text-sm text-black whitespace-pre-wrap">{r.value}</dd>
             </div>
           ))}
         </dl>
