@@ -37,23 +37,46 @@ const currentPath = Astro.url.pathname;
             </a>
           );
         })}
+        <button
+          type="button"
+          class="share-btn ml-1 inline-flex items-center justify-center w-9 h-9 text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-full transition"
+          aria-label="このページを共有"
+          title="このページを共有"
+        >
+          <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 16V4M12 4l-4 4M12 4l4 4"/>
+            <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/>
+          </svg>
+        </button>
         <a
           href="/contact"
-          class="ml-2 inline-flex items-center px-4 py-1.5 bg-[#1d1d1f] hover:bg-[#000] text-white text-[13px] font-medium rounded-full transition whitespace-nowrap"
+          class="ml-1 inline-flex items-center px-4 py-1.5 bg-[#1d1d1f] hover:bg-[#000] text-white text-[13px] font-medium rounded-full transition whitespace-nowrap"
         >
           お問い合わせ
         </a>
       </nav>
 
-      <button
-        id="menu-toggle"
-        class="lg:hidden p-2 text-[#1d1d1f]"
-        aria-label="メニュー"
-      >
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16"/>
-        </svg>
-      </button>
+      <div class="lg:hidden flex items-center gap-1">
+        <button
+          type="button"
+          class="share-btn inline-flex items-center justify-center w-10 h-10 text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-full transition"
+          aria-label="このページを共有"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 16V4M12 4l-4 4M12 4l4 4"/>
+            <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/>
+          </svg>
+        </button>
+        <button
+          id="menu-toggle"
+          class="p-2 text-[#1d1d1f]"
+          aria-label="メニュー"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <div id="mobile-menu" class="hidden lg:hidden pb-4 bg-white">
@@ -77,5 +100,41 @@ const currentPath = Astro.url.pathname;
   const menu = document.getElementById('mobile-menu');
   toggle?.addEventListener('click', () => {
     menu?.classList.toggle('hidden');
+  });
+
+  function showToast(message: string) {
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.className = 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-[#1d1d1f] text-white px-6 py-3 rounded-full text-sm font-medium z-[100] shadow-xl';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2000);
+  }
+
+  async function handleShare() {
+    const shareData = {
+      title: document.title,
+      text: '埼玉県本庄市の設備工事業者・加納設備株式会社',
+      url: window.location.href,
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch {
+        // ユーザーがキャンセル等。何もしない
+      }
+    } else if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        showToast('URLをコピーしました');
+      } catch {
+        prompt('URLをコピーしてください:', shareData.url);
+      }
+    } else {
+      prompt('URLをコピーしてください:', shareData.url);
+    }
+  }
+
+  document.querySelectorAll('.share-btn').forEach((btn) => {
+    btn.addEventListener('click', handleShare);
   });
 </script>
