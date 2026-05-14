@@ -116,7 +116,8 @@ const currentPath = Astro.url.pathname;
       text: '埼玉県本庄市の設備工事業者・加納設備株式会社',
       url: window.location.href,
     };
-    if (navigator.share) {
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouchDevice && navigator.share) {
       try {
         await navigator.share(shareData);
       } catch {
