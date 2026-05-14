@@ -6,7 +6,7 @@ export const company = {
   address: '〒367-0044 埼玉県本庄市見福2-20-19',
   phone: '0495-24-5655',
   fax: '0495-XX-XXXX',
-  email: 'info@kanou-setsubi.example.com',
+  email: 'hp_info@kanousetsubi.co.jp',
   ceo: '加納 豊',
   founded: '昭和36年5月',
   capital: '2,000万円',
