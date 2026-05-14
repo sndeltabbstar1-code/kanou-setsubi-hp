@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kanou-setsubi-hp.pages.dev',
+  site: 'https://www.kanousetsubi.co.jp',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

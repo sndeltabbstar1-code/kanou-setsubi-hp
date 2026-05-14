@@ -70,7 +70,7 @@ draw.text((text_x, 470), "創業 昭和36年", font=f_small, fill=MUTED)
 
 # 右下にURL
 f_url = ImageFont.truetype(str(FONT_REG), 14)
-draw.text((text_x, H - 50), "kanou-setsubi-hp.pages.dev", font=f_url, fill=LINK)
+draw.text((text_x, H - 50), "www.kanousetsubi.co.jp", font=f_url, fill=LINK)
 
 img.save(OUT, "PNG", optimize=True)
 print(f"saved: {OUT}  ({OUT.stat().st_size // 1024} KB)")
