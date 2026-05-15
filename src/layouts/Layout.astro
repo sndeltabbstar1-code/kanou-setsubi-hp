@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { company } from '../data/company';
+import { services } from '../data/services';
 
 interface Props {
   title?: string;
@@ -19,11 +20,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const orgJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': new URL('/#organization', Astro.site).toString(),
   name: company.name,
   alternateName: company.nameEn,
   url: Astro.site?.toString(),
   logo: new URL('/logo.png', Astro.site).toString(),
+  image: new URL('/og-image.png', Astro.site).toString(),
   telephone: company.phone,
+  email: company.email,
+  description: company.description,
   address: {
     '@type': 'PostalAddress',
     streetAddress: '見福2-20-19',
@@ -32,9 +37,37 @@ const orgJsonLd = {
     postalCode: '367-0044',
     addressCountry: 'JP',
   },
-  areaServed: company.area,
-  founder: company.ceo,
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: company.geo.latitude,
+    longitude: company.geo.longitude,
+  },
+  areaServed: company.areas.map((a) => ({ '@type': 'City', name: a })),
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+  ],
+  founder: { '@type': 'Person', name: company.ceo },
+  foundingDate: '1961-05',
   numberOfEmployees: 10,
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: '加納設備の事業内容',
+    itemListElement: services.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: `本庄市の${s.title}工事`,
+        description: s.description.replace(/\n/g, ''),
+        provider: { '@id': new URL('/#organization', Astro.site).toString() },
+        areaServed: company.areas.map((a) => ({ '@type': 'City', name: a })),
+      },
+    })),
+  },
 };
 ---
 

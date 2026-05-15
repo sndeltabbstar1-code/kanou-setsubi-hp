@@ -11,23 +11,39 @@ const categories = [
   { value: 'fire', label: '消防設備' },
   { value: 'sanitary', label: '衛生' },
 ];
+
+const locationCounts = works.reduce<Record<string, number>>((acc, w) => {
+  if (w.location && w.location !== '準備中') {
+    acc[w.location] = (acc[w.location] ?? 0) + 1;
+  }
+  return acc;
+}, {});
+const locationSummary = Object.entries(locationCounts)
+  .sort((a, b) => b[1] - a[1])
+  .map(([loc, n]) => `${loc} ${n}件`)
+  .join(' ／ ');
 ---
 
-<Layout title="施工事例" description="加納設備株式会社の施工事例。公共・民間あわせて多数の実績があります。">
+<Layout title="施工事例｜本庄市の設備工事実績" description="本庄市の設備工事会社 加納設備株式会社の施工事例。本庄市・上里町・寄居町ほか、公共工事・民間工事で多数の実績があります。">
   <Breadcrumb items={[{ label: 'ホーム', href: '/' }, { label: '施工事例' }]} />
   <!-- HERO -->
   <section class="bg-[#f5f5f7] pt-24 lg:pt-32 pb-20 lg:pb-28 text-center">
     <div class="mx-auto max-w-5xl px-6">
       <p class="text-[13px] sm:text-sm font-semibold text-[#0066cc] tracking-[0.2em] uppercase mb-4 fade-in">
-        Works
+        Works ／ 本庄市の設備工事実績
       </p>
       <h1 class="headline-display text-5xl sm:text-6xl lg:text-8xl text-[#1d1d1f] mb-6 fade-in" style="animation-delay: 0.1s">
         実績が、<br />信頼の証。
       </h1>
       <p class="text-lg lg:text-xl text-[#1d1d1f] font-light max-w-2xl mx-auto leading-relaxed fade-in" style="animation-delay: 0.2s">
-        公共工事・民間工事ともに多数の実績。<br class="hidden sm:block" />
+        本庄市を中心に、公共工事・民間工事ともに多数の実績。<br class="hidden sm:block" />
         地域に根ざし、信頼される施工を続けています。
       </p>
+      {locationSummary && (
+        <p class="mt-6 text-sm text-[#1d1d1f]/70 fade-in" style="animation-delay: 0.3s">
+          施工地域: {locationSummary}
+        </p>
+      )}
     </div>
   </section>
 

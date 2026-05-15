@@ -13,7 +13,19 @@ export const company = {
   employees: '10名',
   license: '埼玉県知事 許可(特-7)第7491号　管工事業\n埼玉県知事 許可(般-7)第7491号　土木工事業・解体工事業・水道施設工事業・消防施設工事業',
   area: '埼玉県本庄市・児玉郡市・深谷市 他',
+  areas: [
+    '本庄市',
+    '深谷市',
+    '熊谷市',
+    '児玉郡上里町',
+    '児玉郡神川町',
+    '児玉郡美里町',
+    '大里郡寄居町',
+    '群馬県伊勢崎市',
+    '群馬県藤岡市',
+  ],
   hours: '平日 8:00 〜 17:00',
+  geo: { latitude: 36.230306, longitude: 139.182102 },
   instagram: 'https://www.instagram.com/', // 後で差し替え
   tiktok: 'https://www.tiktok.com/', // 後で差し替え
   mapEmbed: 'https://maps.google.com/maps?q=' + encodeURIComponent('加納設備株式会社 埼玉県本庄市見福2-20-19') + '&hl=ja&z=17&output=embed',
